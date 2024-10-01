@@ -41,3 +41,108 @@ a{
     color: #F6F4F0;
     text-decoration: none;
 }
+
+
+
+
+/*Area da Main*/
+#area-promocoes {
+    height: 330px;
+  
+    display: flex;
+    align-items: center;justify-content: space-between;
+    flex-wrap: wrap;
+}
+/* Tamanho da imagem */
+.imagem-promocao {
+    height: 170px;
+}
+
+/* espaçamento entre os produtos em promoção */
+.produto-promocao{
+    padding: 20px;
+}
+/* area das informacoes dos produtos */
+.area-info-produtos {
+    margin: 0;
+    background: rgb(241, 241, 241);
+    width: 193.97px;
+    height: 110px;
+    border-radius: 0 0 10px 10px;
+    padding: 10px 13px;
+}
+/* formatacao das imagens dos produtos em promocao */
+.img-promocao{
+    border-radius: 10px 10px 0 0;
+   width: 220px;
+   height: 175px;
+}
+/* formatacao da area do titulo da empresa area de promocao */
+.text-promocao {
+    color: #747474;
+    font-size: 9px;
+    float: left;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Formatação do paragrado p de dataPromocao*/
+.data-promocao p{
+    float: right;
+    padding: 0;
+    margin: 4px;
+    font-size: 13px;
+}
+/* Formataco do titulo da area de informacoes dos produtos */
+.Titulo-Promocoes{
+    float: left;
+    font-size: 13px ;
+    font-family: 'Merriweather', serif;
+}
+/* Formatacao do titulo da area de promocoes */
+.Titulo-Promocoes p{
+    color: black;
+    margin: 0;
+    text-transform: uppercase;
+    width: 80%;
+    font-weight: bold;
+}
+
+.preco-promocao{
+    padding-top: 10px;
+    float: left;
+    width: 50%;
+}
+.Promocao-comprar{
+    float: right;
+    padding-top: 4px;
+   
+    
+    
+    
+}
+#promocao-titulo{
+    font-size: 40px;
+    padding : 15px;
+    margin: 0;
+    text-align: center;
+
+}
+.Promocao-comprar button{
+    margin-right: 1.1px;
+    margin-top: 9px;
+    width: 40px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(139, 226, 8);
+    font-size: 18px;
+}
+/* Usei hover pra quando passar o mouse nos botoes mudar o fundo e o estilo do mouse */
+.Promocao-comprar button:hover{
+    background-color: aquamarine;
+    cursor: pointer;
+}
+.Promocao-comprar button a{
+    
+    text-decoration: none;
+}
