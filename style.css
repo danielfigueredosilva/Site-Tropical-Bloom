@@ -2,62 +2,142 @@
     padding:0 ;
     margin: 0;
 }
+:root{
+
+}
 body{
     background-color: #F6F4F0;
 }
 header{
+    background-color: #442f73;
+    box-shadow: 0px px 2px ;
     width: 100%;
     height: 19vh;
-    background-color: rgb(79, 47, 143);
+    /*display: flex;
+    align-items: center;
+    justify-content: space-between;  */
+}
+/*Cabeçalho*/
+.nav-bar{
+    display: flex;
+    flex-direction:column ;
+    padding: 1.5rem 6rem;
+}
+/*Parte superior do cabeçalho*/
+.nav-superior{
     display: flex;
     align-items: center;
-    /* justify-content: space-between;  */
+    justify-content: space-around;
+    
 }
-#logo{ 
+/*Parte infeior do cabeçalho*/
+.nav-inferior{
+    display: flex;
+    align-self: center;
+}
+/*Logo*/
+.logo{ 
     color: #F6F4F0;
-    margin-left: 8%;
-}
-#menu{
+    display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 15%;
+    font-size: 2rem;
 
 }
-#top-menu{
-    display:flex;
-    justify-content:space-between;
-}
-#bottom-menu{
-}   
-div>nav>ul{
+/*Menu de navegação*/
+.nav-list{
     display: flex;
-    list-style: none;
-} 
-div>nav>ul>li{
-    margin-right: 70px;
-    margin-top: 70px;
+    align-items: center;
 }
-a{
-    color: #F6F4F0;
+/*listas não ordenada do menu de navegação*/
+.nav-list ul{
+   display: flex;
+   justify-content: center;
+   list-style: none; 
+}
+/*Itens do menu de navegação*/
+.nav-item{
+    margin:  30px;
+}
+/*links do menu de navegação*/
+.nav-link{
     text-decoration: none;
+    font-size: 1.rem;
+    color: #fff;
+    font-weight: 100;
+}
+/*Execução de quando passar o mouse no menu de navegação*/
+.nav-link:hover{
+    border-top: 2px solid #4b4b4b;
+    padding-top: 10px;
+}
+/**/
+.btn-entrar button{
+    border: none;
+    background-color: #f2bb13;
+    padding: 10px 40px;
+    border-radius:20px;
+    margin-left: px;
+    /* font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-items: center; */
+}
+.btn-cadastrar-se button{
+    border: none;
+    background-color: #f2bb13;
+    padding: 10px 60px;
+    border-radius:20px;
 }
 
-
-
-
+.btn-link{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+/*Caixa de pesquisar*/
+.busca{
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc ;
+    background-color: #00000006;
+    width: 500px;
+    height: 30px;
+    /* margin: 0px auto ; */
+    border-radius: 20px;
+    padding: 5px 10px;
+    color: #4b4b4b;
+}
+/*Texto da área de pesquisar*/
+#txt-busca{
+    padding: 8px;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+}
+main{
+    background-color: white;
+    min-width: 200px;
+    max-width: 1250px;
+    min-height: 1000px;
+    margin: auto;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.418);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+    
 /*Area da Main*/
 #area-promocoes {
     height: 330px;
-  
     display: flex;
-    align-items: center;justify-content: space-between;
+    align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 /* Tamanho da imagem */
 .imagem-promocao {
     height: 170px;
 }
-
 /* espaçamento entre os produtos em promoção */
 .produto-promocao{
     padding: 20px;
@@ -84,7 +164,6 @@ a{
     float: left;
     font-family: 'Open Sans', sans-serif;
 }
-
 /* Formatação do paragrado p de dataPromocao*/
 .data-promocao p{
     float: right;
@@ -106,7 +185,6 @@ a{
     width: 80%;
     font-weight: bold;
 }
-
 .preco-promocao{
     padding-top: 10px;
     float: left;
@@ -114,18 +192,13 @@ a{
 }
 .Promocao-comprar{
     float: right;
-    padding-top: 4px;
-   
-    
-    
-    
+    padding-top: 4px;   
 }
 #promocao-titulo{
     font-size: 40px;
     padding : 15px;
     margin: 0;
     text-align: center;
-
 }
 .Promocao-comprar button{
     margin-right: 1.1px;
