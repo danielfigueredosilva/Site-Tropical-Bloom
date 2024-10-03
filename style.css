@@ -16,7 +16,7 @@
 :root{
     --amarelo-claro:#f2d16d;
     --amarelo-escuro:#f2bb13;
-    --roxo:#442f72;
+    --roxo:var(--rosa-claro);
     --lilas:#a56da6;
     --rosa-claro:#f2c2dc;
 
