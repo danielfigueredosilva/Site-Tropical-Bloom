@@ -1,11 +1,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
+/*Comando Geral*/
 *{
     padding:0 ;
     margin: 0;
 }
-
 /*
 #f2d16d amarelo-claro
 #f2bb13 amarelo-escuro 
@@ -13,6 +12,7 @@
 #a56da6 lilas 
 #f2c2dc rosa-claro
 */
+/*Variaveis para cores e fonte*/
 :root{
     --amarelo-claro:#f2d16d;
     --amarelo-escuro:#f2bb13;
@@ -26,23 +26,24 @@ body{
     background-color:white;
 }
 header{
+    /* display: flex; */
     background-color: var(--roxo);
-    box-shadow: 0px px 2px ;
+    box-shadow: 0px 0px 30px black;
     width: 100%;
     height: 19vh;
 }    
 /*Cabeçalho*/
 .nav-bar{
     display: flex;
-    flex-direction:column ;
-    padding: 1.5rem 6rem;
+    /* align-items: center; */
+    flex-direction:column;
+    padding: 1.5rem 5rem;
 }
 /*Parte superior do cabeçalho*/
 .nav-superior{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    
+    justify-content:space-between;   
 }
 /*Parte infeior do cabeçalho*/
 .nav-inferior{
@@ -55,22 +56,31 @@ header{
     display: flex;
     align-items: center;
     font-size: 2rem;
-
+    align-self: auto;
+    margin-left: -15px;
 }
 /*Menu de navegação*/
 .nav-list{
     display: flex;
     align-items: center;
+    margin: 30px;
+    /* gap: 2em; */
 }
 /*listas não ordenada do menu de navegação*/
-.nav-list ul{
+.nav-link:hover{
+    border-top: 2px solid var(--rosa-claro);
+    padding-top: 15px;
+}
+/*Menu de navegação horizontal*/ 
+.navigator{
    display: flex;
    justify-content: center;
    list-style: none; 
 }
 /*Itens do menu de navegação*/
 .nav-item{
-    margin: 30px;
+    margin: 0px 30px;
+    cursor: pointer;
 }
 /*links do menu de navegação*/
 .nav-link{
@@ -81,29 +91,38 @@ header{
     font-weight: 400;
 }
 /*Execução de quando passar o mouse no menu de navegação*/
-.nav-link:hover{
-    border-top: 2px solid var(--cinza);
-    padding-top: 15px;
-}
+
 /*Botão de entrar*/
 .btn-entrar button{
     border: none;
     background-color: #f2bb13;
     padding: 10px 40px;
-    border-radius:20px;   
+    border-radius:20px; 
+    cursor: pointer;  
 }
+/*Botão de cadatrar-se*/
 .btn-cadastrar-se button{
     border: none;
     background-color: #f2bb13;
     padding: 10px 60px;
     border-radius:20px;
- 
+    cursor: pointer;
 }
+/*Botões do header*/
+.btn-menu{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+/*Link dos botões*/
 .btn-link{
     text-decoration: none;
     color: white;
     font-family: var(--fonte-padrao);
-    font-weight: 600;
+    font-weight: bold;
+}
+.btn-carrinho{
+    cursor: pointer;
 }
 /*Caixa de pesquisar*/
 .busca{
@@ -111,7 +130,7 @@ header{
     align-items: center;
     border: 1px solid #ccc ;
     background-color: #ccc;
-    width: 450px;
+    width: 500px;
     height: 30px;
     border-radius: 20px;
     padding: 5px 10px;
@@ -125,6 +144,101 @@ header{
     width: 100%;
     outline: none;
 }
+/*Tela responsiva para laptop e tablets maiores*/
+@media screen and (max-width: 1260px) {
+    .btn-cadastrar-se button{
+    padding: 10px 20px; 
+    }
+    .busca{
+        width: 400px;
+    }
+}
+/*Tela responsiva para tablet*/
+@media screen and (max-width: 1050px) {
+    header{
+        width: 100%;
+        height: 12vh;    
+    }
+    .nav-inferior{
+        display: none;
+    }
+    .busca{
+        width: 200px;
+    }
+    .btn-cadastrar-se button{
+        padding: 10px 20px;
+    }
+    .btn-entrar button{
+        padding: 10px 15px;
+    }
+}
+/*Tela resposiva para mobile*/
+@media screen and (max-width: 768px) {
+    .btn-cadastrar-se, .btn-entrar, .nav-inferior{ 
+        display: none;
+    }
+    header{
+        width: 100%;
+        height: 12vh;
+    }
+    .nav-bar{
+        display:flex;
+        flex-direction: none;
+        padding-top: 1.3em;
+        
+    }
+    .nav-superior{
+        display: flex;
+        /* align-items: center; */
+        justify-content: space-between;
+    }
+    .logo{ 
+        /* display: none; */
+        color: white;
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+        align-self: auto; 
+        margin-left:-65px;
+    }
+    .busca{
+        display: flex;
+        align-items: center;
+        border: 1px solid #ccc ;
+        background-color: #ccc;
+        width: 200px;
+        height: 20px;
+        border-radius: 20px;
+        padding: 5px 10px;
+        color: #4b4b4b;
+        margin:0px 0px;
+    }
+    /*Texto da área de pesquisar*/
+    #txt-busca{
+        padding: 8px;
+        border: none;
+        background-color: transparent;
+        width: 100%;
+        outline: none;
+    }
+    .img-carrinho{
+        width: 20px;
+        height: 20px;
+    }
+    .btn-carrinho{
+        
+    }
+    /* .navigator{
+        position: absolute;
+        flex-direction: column;
+        background-color: rgb(0, 0, 0, 0.75); 
+        height: 100%;
+    }
+    .nav-link:hover{
+        border-top: none;
+        padding-top: none;
+    }  */
+}
 /*Estilização da main*/
 main{
     background-color:  #F6F4F0;
@@ -136,7 +250,7 @@ main{
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.418);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-}   
+}  
 /*Area da Main*/
 #area-promocoes {
     height: 330px;

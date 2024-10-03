@@ -1,0 +1,10 @@
+window.addEventListener("load", () => {
+    if (document.body.classList.contains("hidemenu")) {
+        let allLinks = document.querySelectorAll("a:not(.web-story-iframe-opener)");
+
+        allLinks.forEach((item) => {
+            let itemLink = item.getAttribute('href')
+            item.setAttribute('href', `${itemLink}?hidemenu=true`);
+        })
+    }
+});

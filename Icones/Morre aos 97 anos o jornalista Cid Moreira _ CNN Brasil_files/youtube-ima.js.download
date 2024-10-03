@@ -1,0 +1,243 @@
+let imaManager;
+let localeLoaded;
+let newPlayerId;
+let currentPlayer;
+let realVpmute, realPlcmt, realHl, realVpa = ''
+let youtubeEnvironment = cnnbr_globals.youtube_environment;
+let youTubeUi          = `&cust_params=posicao-video%3Ddefault-video-ui%26environment%3D${youtubeEnvironment}`;
+let newYoutubeUi       = '';
+let videoAutoplay      = false;
+let videoElement       = '';
+const adTagUrl         = cnnbr_globals.ad_tag_url;
+const completeAdTagUrl = adTagUrl + '___ad-params___' + youTubeUi;
+
+const YoutubeIma = {
+	/**
+	 * Decide se será usado o player IMA ou legado para dar play no vídeo do YouTube
+	 *
+	 * @param videoWrapper Elemento que será usado para play no player legado
+	 * @param videoId ID do vídeo. Exemplo: mZh1xjfxTuI
+	 * @param videoUi UI para anúncios. Exemplo: internacional
+	 * @param width Largura do player, em string. Exemplo: "360px"
+	 * @param height Altura do player, em string. Exemplo: "100%"
+	 * @param autoplay Se deve rodar autoplay ou não. True para sim e false para não
+	 * @param mute Se deve rodar o vídeo mutado. True para sim e false para não
+	 * @param vpmute
+	 * @param plcmt
+	 * @param hl
+	 * @param vpa
+	 * @param position Posição do vídeo, usado para diminuir chance de vídeo duplicado na página
+	 */
+	startVideoPlayer(videoWrapper, videoId, videoUi, width, height, autoplay, mute, vpmute, plcmt, hl, vpa, position) {
+		if (adTagUrl && localeLoaded !== true) {
+			google.ima.settings.setLocale('pt');
+			localeLoaded = true;
+		}
+
+		console.clear();
+		console.log("%cYoutubeIma.startVideoPlayer","font-size: 18px");
+
+		console.table(
+			{
+				videoId: videoId,
+				videoUi: videoUi,
+				width: width,
+				height: height,
+				autoplay: autoplay,
+				mute: mute,
+				vpmute: vpmute,
+				plcmt: plcmt,
+				hl: hl,
+				vpa: vpa,
+				position: position
+			}
+		)
+		console.log(videoWrapper)
+
+		newYoutubeUi  = videoUi;
+		videoAutoplay = autoplay;
+		newPlayerId   = `player_${videoUi}_${videoId}${position}`
+		videoElement  = document.querySelector(`#${newPlayerId}`);
+		videoIframe   = videoElement?.querySelector(`iframe#${newPlayerId}-player`);
+
+		realVpmute = vpmute;
+		realPlcmt  = plcmt;
+		realHl     = hl;
+		realVpa    = vpa;
+
+		if (!videoIframe) {
+			if (adTagUrl) {
+				// O recomendado é sempre iniciar o vídeo com o player integrado com IMA
+				this.startImaPlayer(videoId, videoUi, width, height, autoplay, mute, vpmute, plcmt, hl, vpa);
+				return;
+			}
+
+			// O player legado é instável e pode não funcionar
+			this.startLegacyPlayer(videoWrapper, videoId, videoUi, width, height, autoplay, mute);
+			console.error("IMA não está habilitado. Tentando exibir o vídeo com player legado");
+		}
+	},
+
+	/**
+	 * Dá play no vídeo do YouTube com o modo IMA (recomendado)
+	 *
+	 * @param videoId ID do vídeo. Exemplo: mZh1xjfxTuI
+	 * @param videoUi UI para anúncios. Exemplo: internacional
+	 * @param width Largura do player, em string. Exemplo: "360px"
+	 * @param height Altura do player, em string. Exemplo: "100%"
+	 * @param autoplay Se deve rodar autoplay ou não. True para sim e false para não
+	 * @param mute Se deve rodar o vídeo mutado. True para sim e false para não
+	 */
+	startImaPlayer(videoId, videoUi, width, height, autoplay, mute, vpmute, plcmt, hl, vpa) {
+		this.maybePauseCurrentVideo();
+
+		player[newPlayerId] = YT.createPlayerForPublishers(
+			newPlayerId, // ID do elemento HTML que o vídeo irá rodar
+			this.makeAdsRequest,
+			{
+				youtubeOptions: {
+					videoId,
+					autoplay,
+					height,
+					width,
+					vpmute,
+					plcmt,
+					hl,
+					vpa
+				}
+			},
+			this.onPlayerReady
+		);
+	},
+
+	/**
+	 * Dá play no vídeo do YouTube com o player legado (instável)
+	 *
+	 * @param videoWrapper Elemento que será usado para play no player legado
+	 * @param videoId ID do vídeo. Exemplo: mZh1xjfxTuI
+	 * @param videoUi UI para anúncios. Exemplo: internacional
+	 * @param width Largura do player, em string. Exemplo: "360px"
+	 * @param height Altura do player, em string. Exemplo: "100%"
+	 * @param autoplay Se deve rodar autoplay ou não. True para sim e false para não
+	 * @param mute Se deve rodar o vídeo mutado. True para sim e false para não
+	 */
+	startLegacyPlayer(videoWrapper, videoId, videoUi, width, height, autoplay, mute) {
+		this.maybePauseCurrentVideo();
+
+		const pfpDefaults = `{"adsConfig":{"adTagParameters":{"iu":"/21920083859/web/${videoUi}","pmnd":0,"pmxd":30000,"pmad":2}},"relatedChannels":["UC6WLCEXdr_IU4DB5V7sPkzw","UC7f35v8GI1O_f6x2PfeOutQ","UCbrVBUVa2bwYRofc-lVeAnA"]}`;
+
+		window.YT.ready(function () {
+			player[newPlayerId] = new YT.Player(videoWrapper, {
+				width,
+				height,
+				videoId,
+				playerVars: {enablejsapi: 1, autoplay, embed_config: pfpDefaults},
+				events: {
+					'onReady': function (e) {
+						(mute) ? e.target.mute() : '';
+						e.target.playVideo();
+					}
+				}
+			})
+		});
+	},
+
+	/**
+	 * Salva o ID do vídeo atual e pausa um vídeo antigo, caso exista
+	 */
+	maybePauseCurrentVideo() {
+		// Verifica se o novo player difere do atual
+		if (newPlayerId !== currentPlayer) {
+			// Se for, pausa o vídeo atual
+			player[currentPlayer]?.pauseVideo();
+		}
+
+		// Salva o ID do player novo que passou a ser o atual
+		currentPlayer = newPlayerId;
+	},
+
+	/**
+	 * Evento do IMA para rodar o vídeo após os anúncios
+	 *
+	 * @param plyr Objeto do vídeo, enviado pelo próprio YouTube
+	 * @param ima Configurações do IMA, enviado pelo próprio YouTube
+	 */
+	onPlayerReady(plyr, ima) {
+		imaManager          = ima;
+		player[newPlayerId] = plyr;
+
+		if (videoAutoplay) {
+			player[newPlayerId].playVideo();
+		}
+
+		if (!videoElement.classList.contains('clicked')) {
+			videoElement.classList.add('clicked');
+		}
+	},
+
+	/**
+	 * Evento do IMA para solicitar anúncios para o AdManager
+	 *
+	 * @param adsRequest O request de ads, enviado pelo próprio YouTube
+	 * @param adsRenderingSettings Configurações de renderização de ads, enviado pelo próprio YouTube
+	 */
+	makeAdsRequest(adsRequest, adsRenderingSettings) {
+		let adParameters = `&vpmute=${realVpmute}`;
+		adParameters    += `&vpa=${realVpa}`;
+		adParameters    += `&hl=${realHl}`;
+		adParameters    += `&plcmt=${realPlcmt}`;
+
+		let adTagUrl = completeAdTagUrl.replace('default-video-ui', newYoutubeUi);
+		adTagUrl     = adTagUrl.replace('___ad-params___', adParameters);
+
+		adsRequest.adTagUrl = adTagUrl;
+
+		adsRenderingSettings.useStyledNonLinearAds = true;
+		adsRenderingSettings.uiElements = [
+			window.google.ima.UiElements.AD_ATTRIBUTION,
+			window.google.ima.UiElements.COUNTDOWN];
+	},
+
+	/**
+	 * Busca por todas as informações de um vídeo
+	 *
+	 * @param videoElement O elemento do vídeo onde as informações serão buscadas
+	 * @param getWrapperById Padrão false. Se getWrapperById for true, busca pelo elemento "player_player-manchete_3hjaEr5hdS". Se false, busca pelo próprio elemento enviado para a função.
+	 *
+	 * @return Um objeto com todos os detalhes do vídeo:
+	 * #### videoWrapper: Elemento do vídeo
+	 * #### videoId: ID do vídeo
+	 * #### videoUi: AdFormat (UI). Padrão 'home-video'
+	 * #### width: Largura. Padrão "640px"
+	 * #### height: Altura. Padrão "480px"
+	 * #### mute: Mudo ou não. Padrão false
+	 * #### title: Título do Vídeo
+	 * #### autoplay: Autoplay. Sempre true
+	 * #### plcmt: Placement de Ads. Padrão '1'
+	 * #### vpmute: Mute. Padrão '1'
+	 * #### hl: Idioma. Sempre 'pt'
+	 * #### vpa: Padrão 'click'
+	 * #### position: Posição do vídeo, usado para diminuir chance de vídeo duplicado na página
+	 */
+	getVideoDetails(videoElement, getWrapperById = false) {
+		const videoWrapperElement = getWrapperById
+			? `player_${videoElement.dataset.youtubeUi}_${videoElement.dataset.youtubeId}`
+			: videoElement;
+
+		return {
+			videoWrapper: videoWrapperElement,
+			videoId: videoElement.dataset.youtubeId ?? videoElement.dataset.videoId,
+			videoUi: videoElement.dataset.youtubeUi ?? 'home-video',
+			width: videoElement.dataset.youtubeWidth ?? "640px",
+			height: videoElement.dataset.youtubeHeight ?? "480px",
+			mute: videoElement.dataset.youtubeMute ?? false,
+			title: videoElement.dataset.videoTitle ?? '',
+			autoplay: true,
+			plcmt: videoElement.dataset.youtubePlcmt ?? '1',
+			vpmute: videoElement.dataset.youtubeMute ?? '0',
+			hl: 'pt',
+			vpa: videoElement.dataset.youtubeVpa ?? 'click',
+			position: videoElement.dataset.youtubePosition ?? '',
+		}
+	}
+};

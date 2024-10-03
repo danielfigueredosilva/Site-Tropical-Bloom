@@ -1,0 +1,21 @@
+
+#progressbar_soccer {
+    width: 100%;
+    height: 70px;
+    background-color: #4CAF50;
+    border-radius: 5px;
+}
+
+.fm-progressbar span {
+    position: absolute;
+    left: 0;
+    right: 50%;
+    font-size: 29px;
+    z-index: 9999;
+    top: 45%;
+    color: #FFF;
+    width: 100%;
+    text-align: center;
+    max-width: 100%;
+    min-width: 100%;
+}

@@ -1,0 +1,133 @@
+function getColorByParty(id) {
+	const color= {
+		10: {
+			cor: '#005CA9',
+			nome: 'REPUBLICANOS'
+		},
+		11: {
+			cor: '#0E4371',
+			nome: 'PP'
+		},
+		12: {
+			cor: '#1C3E7A',
+			nome: 'PDT'
+		},
+		13: {
+			cor: '#CA2029',
+			nome: 'PT'
+		},
+		15: {
+			cor: '#FFB300',
+			nome: 'MDB'
+		},
+		16: {
+			cor: '#CC0000',
+			nome: 'PSTU'
+		},
+		18: {
+			cor: '#3CA08C',
+			nome: 'REDE'
+		},
+		19: {
+			cor: '#31B44B',
+			nome: 'PODE'
+		},
+		20: {
+			cor: '#31B44B',
+			nome: 'PODE'
+		},
+		21: {
+			cor: '#BE0000',
+			nome: 'PCB'
+		},
+		22: {
+			cor: '#120075',
+			nome: 'PL'
+		},
+		23: {
+			cor: '#052F4E',
+			nome: 'CIDADANIA'
+		},
+		25: {
+			cor: '#01823F',
+			nome: 'PRD'
+		},
+		27: {
+			cor: '#00007B',
+			nome: 'DC'
+		},
+		28: {
+			cor: '#122068',
+			nome: 'PRTB'
+		},
+		29: {
+			cor: '#CE1920',
+			nome: 'PCO'
+		},
+		30: {
+			cor: '#F36F21',
+			nome: 'NOVO'
+		},
+		33: {
+			cor: '#D91A1A',
+			nome: 'MOBILIZA'
+		},
+		35: {
+			cor: '#0E3F7D',
+			nome: 'PMB'
+		},
+		36: {
+			cor: '#0033A1',
+			nome: 'AGIR'
+		},
+		40: {
+			cor: '#FF1A21',
+			nome: 'PSB'
+		},
+		43: {
+			cor: '#01652F',
+			nome: 'PV'
+		},
+		44: {
+			cor: '#0D4DA1',
+			nome: 'UNIÃO'
+		},
+		45: {
+			cor: '#1D6996',
+			nome: 'PSDB'
+		},
+		50: {
+			cor: '#550080',
+			nome: 'PSOL'
+		},
+		55: {
+			cor: '#0A4185',
+			nome: 'PSD'
+		},
+		65: {
+			cor: '#DA251C',
+			nome: 'PCdoB'
+		},
+		70: {
+			cor: '#F27A2F',
+			nome: 'AVANTE'
+		},
+		77: {
+			cor: '#162A5B',
+			nome: 'SOLIDARIEDADE'
+		},
+		80: {
+			cor: '#000000',
+			nome: 'UP'
+		}
+	};
+
+	if (color[id] === undefined) {
+		return {
+			cor: '#000000',
+			nome: id
+		};
+	}
+
+	return color[id];
+}

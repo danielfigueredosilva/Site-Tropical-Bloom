@@ -1,0 +1,55 @@
+function copyLinkHref(event) {
+    event.preventDefault();
+
+    let linkElement = document.getElementById('post__link');
+    let hrefValue = linkElement.getAttribute('href');
+
+    // Cria um elemento de entrada temporário
+    let tempInput = document.createElement('input');
+    tempInput.setAttribute('value', hrefValue);
+    document.body.appendChild(tempInput);
+    tempInput.select();
+
+    // Copia do botão o link do post
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
+
+    //Exibe o span para confirmar a copia do link
+    let span = document.querySelector('.single-sharer__copy__alert');
+    span.textContent = "Link Copiado!";
+    span.style.visibility = 'visible';
+
+    // Verifica o tamanho da tela para o comportamento da mensagem de link copiado
+    if (window.innerWidth < 991) {
+        setTimeout(function () {
+            span.style.visibility = 'hidden';
+        }, 1500);
+    } else {
+        setTimeout(function () {
+            span.textContent = "Copiar Link";
+            span.style.visibility = '';
+        }, 1500);
+    }
+}
+
+let shareTrigger = document.querySelector('#single__sharer__trigger');
+let postTitle    = document.querySelector('.single-header__title').innerText;
+let postExcerpt  = document.querySelector('.single-header__excerpt').innerText;
+let postUrl      = shareTrigger.dataset.postUrl;
+
+const shareData = {
+    title: postTitle,
+    text:  postExcerpt,
+    url:   postUrl,
+};
+
+if (CnnUtils.isMobileDevice()) {
+    shareTrigger.addEventListener('click', async (e)=>{
+    e.preventDefault();
+        try {
+            await navigator.share(shareData);
+        } catch (err) {
+            return
+        }
+    })
+}

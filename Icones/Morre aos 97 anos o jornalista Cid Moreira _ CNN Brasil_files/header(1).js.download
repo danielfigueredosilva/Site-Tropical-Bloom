@@ -1,0 +1,43 @@
+const featuredImage = document.querySelector('.featured-image');
+const checkboxFeature = document.querySelector('#checkbox_featured-image');
+const fullScreenImg = document.querySelector('.fullscreen-img');
+
+if (featuredImage) {
+    featuredImage.addEventListener('click', clickFeaturedImage);
+    document.addEventListener('keydown', handleKeyDown);
+}
+
+function clickFeaturedImage() {
+    if (!checkboxFeature?.checked) {
+        const fullScreenSrc = fullScreenImg?.getAttribute('data-src');
+        if (fullScreenSrc) {
+            fullScreenImg.setAttribute('src', fullScreenSrc);
+        }
+        blockScroll(true);
+    }
+}
+
+function handleKeyDown(event) {
+    const keyCode = event.code;
+
+    if (keyCode === 'Escape') {
+        disableCheckbox();
+    }
+}
+
+function disableCheckbox() {
+    if (checkboxFeature?.checked) {
+        checkboxFeature.checked = false;
+        blockScroll(false);
+    }
+}
+
+function blockScroll(shouldBlock) {
+    const body = document.querySelector('body');
+    const html = document.documentElement;
+
+    body.style.overflow = shouldBlock ? 'hidden' : '';
+    html.style.overflow = shouldBlock ? 'hidden' : '';
+    body.style.touchAction = shouldBlock ? 'none' : '';
+    html.style.touchAction = shouldBlock ? 'none' : '';
+}

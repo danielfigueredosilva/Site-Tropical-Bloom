@@ -1,0 +1,94 @@
+setTimeout(() => {
+	const autoplayElement = document.querySelector(".has--autoplay");
+	const modalVideoElements = document.querySelectorAll(".has--video:not(.three__highlights__titles--main)");
+
+	if (autoplayElement) {
+		const videoDetailsElement = autoplayElement.querySelector(".video-player-wrapper");
+		const videoComponentElement = autoplayElement.querySelector(".cnn.component-video");
+
+		if (!videoDetailsElement) {
+			console.error("Elemento .video-player-wrapper do vídeo não foi encontrado");
+			return;
+		}
+
+		const {videoWrapper, videoId, videoUi, width, height, autoplay, mute, vpmute, plcmt, hl, vpa, position} = YoutubeIma.getVideoDetails(videoDetailsElement);
+		videoComponentElement.click();
+		YoutubeIma.startVideoPlayer(videoWrapper, videoId, videoUi, width, height, autoplay, mute, vpmute, plcmt, hl, vpa, position);
+
+		// Teste: tentar dar play no vídeo depois de um tempo e forçando clique
+		setTimeout(() => {
+			forceVideoAutoplay(videoComponentElement);
+		}, 500);
+	}
+
+	modalVideoElements.forEach(function (element) {
+		element.addEventListener('click', function (e) {
+			e.preventDefault();
+			const videoDetails = YoutubeIma.getVideoDetails(element, true)
+
+			renderVideoModal(videoDetails)
+			handleCloseVideoModal();
+		})
+	})
+
+	// Função de teste para forçar autoplay do vídeo
+	function forceVideoAutoplay(autoplayElement) {
+		setTimeout(() => {
+			const videoPlayerId = autoplayElement.querySelector(".video-wrapper")?.id;
+
+			player[videoPlayerId].mute();
+			player[videoPlayerId].playVideo();
+		}, 2000);
+	}
+
+	function renderVideoModal(videoDetails) {
+		const {title, videoWrapper, videoId, videoUi, width, height, autoplay, mute, vpmute, plcmt, hl, vpa, position} = videoDetails;
+		const body = document.querySelector('body');
+
+		const videoModalContent = `
+            <div class="modal__bg"></div>
+            <div class="modal__content">
+                <div
+                	id="modal__title_${videoId}"
+                	class="modal__title"
+				>
+					${title}
+				</div>
+                <div
+					hl="pt"
+					plcmt="2"
+					vpmute="0"
+					vpa="click"
+					class="modal__video"
+					id="player_${videoUi}_${videoId}"
+                >
+                	<!-- Vídeo será exibido aqui -->
+                </div>
+                <button class="modal__close">Fechar</button>
+            </div>
+        `;
+
+		// Cria um elemento HTML para o modal
+		const videoModal = document.createElement('div');
+		videoModal.classList.add('video__modal');
+
+		// Precisamos que o modal tenha um InnerHTML
+		// @codingStandardsIgnoreLine
+		videoModal.innerHTML = videoModalContent;
+
+		body.appendChild(videoModal);
+
+		YoutubeIma.startVideoPlayer(videoWrapper, videoId, videoUi, width, height, autoplay, mute, vpmute, plcmt, hl, vpa, position);
+	}
+
+	function handleCloseVideoModal() {
+		const closeElements = document.querySelectorAll('.modal__close, .modal__bg');
+		const videoModalElement = document.querySelector('.video__modal');
+
+		closeElements.forEach(function (element) {
+			element.addEventListener('click', function (e) {
+				videoModalElement.remove();
+			})
+		})
+	}
+}, 0);

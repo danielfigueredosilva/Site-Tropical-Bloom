@@ -1,0 +1,123 @@
+// Garantir que o script carrega só depois da página pronta
+setTimeout(() => {
+	const THEATER        = document.querySelector('section.theater') || false;
+	const OPEN_THEATER   = document.querySelector('.header__featured__links .ao-vivo a');
+	const CLOSE_THEATER  = THEATER?.querySelector('.closed');
+	const THEATER_COLOR  = THEATER?.querySelector('.mode__theater-input');
+	let THEATER_VIDEO_ID = '';
+
+	if (THEATER && OPEN_THEATER) {
+		OPEN_THEATER.addEventListener('click', (event) => openTheater(event), { passive: false });
+		CLOSE_THEATER.addEventListener('click', (event) => closeTheater(event), { passive: false });
+		THEATER_COLOR.addEventListener('click', (event) => toggleDarkMode(event));
+	}
+
+	function openTheater(event) {
+		const isTheaterActive  = THEATER.classList.contains('active');
+
+		// Se não for mobile ou se não estiver ativo, para o evento para dar play no vídeo
+		// Se for mobile ou estiver ativo, deixa o link mandar para a página do ao vivo
+		if (!CnnUtils.isMobileDevice() || !isTheaterActive) {
+			event.preventDefault();
+			event.stopImmediatePropagation();
+		}
+
+		THEATER.classList.add('active');
+
+		if (typeof closeMainNav === "function") {
+			closeMainNav();
+		}
+
+		if (typeof topFunction === "function") {
+			topFunction();
+		}
+
+		cnnbrasilRequestProgramming();
+		playTheaterVideo()
+	}
+
+	function closeTheater() {
+		THEATER.classList.remove('active');
+		player[THEATER_VIDEO_ID].pauseVideo();
+	}
+
+	function playTheaterVideo() {
+		setTimeout(
+			() => {
+				const theaterVideo        = document.querySelector('.theater__video .cnn.component-video');
+				const theaterVideoDetails = theaterVideo.querySelector('.video-player-wrapper');
+				const {videoId, videoUi, position} = YoutubeIma.getVideoDetails(theaterVideoDetails);
+
+				theaterVideo.click();
+				THEATER_VIDEO_ID = `player_${videoUi}_${videoId}${position}`
+			},
+			200
+		);
+	}
+
+	function toggleDarkMode() {
+		THEATER.classList.toggle('clean');
+		THEATER.classList.toggle('dark');
+	}
+
+	async function cnnbrasilRequestProgramming() {
+		try {
+			let payload = JSON.stringify({
+				"type_grid": 'tv',
+			});
+
+			const rawResponse = await fetch(
+				`${theaterUrl}/wp-json/wp/v2/programming-grid-header`,
+				{
+					method: 'POST',
+					headers: {
+						'Accept': 'application/json',
+						'Content-Type': 'application/json'
+					},
+					body: payload
+				}
+			);
+
+			const datas      = await rawResponse.json();
+			let nextPrograms = 0;
+			let programList  = (document.querySelector('ul.a-seguir')) ? document.querySelector('ul.a-seguir') : false;
+
+			if (programList) {
+				programList.innerHTML = '';
+			}
+
+			datas.forEach(element => {
+				if (undefined !== element.program_atual) {
+					let time = element.program_atual.dt_init.split(":");
+					('00' === time[1]) ? time = time[0] + 'h' : time = time[0] + 'h' + time[1];
+
+					THEATER.querySelector('.thumb-program').setAttribute('src', element.program_atual.thumb[0]+'?h=75');
+					THEATER.querySelector('.thumb-program').setAttribute('alt', element.program_atual.title);
+					THEATER.querySelector('.descr-program').textContent = element.program_atual.desc;
+					THEATER.querySelector('.date-time-program p:last-child').textContent = time;
+					THEATER.querySelector('.presenter p:last-child').textContent = element.program_atual.presenter;
+				} else {
+					const time = element.a_seguir.dt_init.split(":");
+					('00' === time[1]) ? time[1] = '' : time[1];
+
+					if (nextPrograms < 3 ) {
+						let html = `
+							<li>
+								<span class="program-time">${time[0]}h${time[1]}</span>
+								<img class="thumb-program-next" src="${element.a_seguir.thumb[0]}?h=75" alt="${element.a_seguir.title}">
+							</li>
+						`;
+
+						if (programList) {
+							programList.insertAdjacentHTML('beforeend', html);
+						}
+
+						nextPrograms++;
+					}
+				}
+			});
+		} catch (err) {
+			console.log(err);
+		}
+	}
+}, 0);

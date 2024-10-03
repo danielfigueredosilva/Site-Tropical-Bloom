@@ -1,0 +1,129 @@
+.most__recent {
+    padding-top: 32px;
+    color: #E5E5E5;
+    background-color: #262626;
+}
+
+.most__recent.white {
+    background: #D0D0D0;
+    color: #000;
+}
+
+.most__recent__icon {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    margin-bottom: 16px;
+}
+
+.most__recent__icon img {
+    margin-right: 12px;
+    width: 32px;
+    height: 32px;
+}
+
+.most__recent__icon p {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0;
+}
+
+.most__recent__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 32px;
+}
+.most__recent__item + .most__recent__item {
+    margin-left: 38px;
+}
+.most__recent__item{
+    width: 240px;
+    height: auto;
+}
+.most__recent__item img {
+    height: 132px;
+    object-fit: cover;
+    border-radius: 4px;
+    width: 240px;
+    aspect-ratio: 16/9;
+}
+
+.most__recent__item h3 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 8px;
+    margin-bottom: 0px;
+    color: #FAFAFA;
+}
+
+.most__recent.white .most__recent__item h3 {
+    color:#000;
+}
+
+.row.recentes-CNN-hidden{
+    display: none;
+}
+
+@media (max-width: 991px){
+    .most__recent__area {
+        margin: 0 20px;
+    }
+    .most__recent__item + .most__recent__item {
+    margin-left: 0;
+    }
+    .most__recent__icon p {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 20px;
+    }
+    ul.most__recent__list {
+        display: block;
+        padding-bottom: 0px;
+    }
+    .most__recent__item a{
+        display: flex;
+    }
+    .most__recent__item figure {
+        margin-right: 8px;
+    }
+    .most__recent__item img {
+        width: 100px;
+        height: 80px;
+        max-width: 100px;
+        max-height: 80px;
+        object-fit: cover;
+        display: block;
+    }
+    .amp-mode .most__recent__item amp-img img {
+        width: 100%;
+        object-fit: cover;
+    }
+    .most__recent__item h3 {
+        height: 48px;
+        line-height: 16px;
+        display: inline-block;
+        vertical-align: top;
+        margin: 4px 0;
+    }
+    .most__recent__item{
+        margin-bottom: 16px;
+        width: auto;
+    }
+    .most__recent__item:last-child {
+        padding-bottom: 32px;
+        margin: 0;
+    }
+}
+
+
+/* AMP */
+.most__recent amp-img > img{
+    max-width: initial;
+    width: initial;
+}

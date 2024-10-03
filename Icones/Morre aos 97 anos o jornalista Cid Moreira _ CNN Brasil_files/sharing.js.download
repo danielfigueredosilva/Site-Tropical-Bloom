@@ -1,0 +1,5 @@
+function share(urlShare){
+    var url = location.href;
+    var url = urlShare+url;
+    window.open(url, "_blank","width=600,height=700,top=300,left=300")
+}

@@ -1,0 +1,125 @@
+const chartConfig = {
+	type: "bar",
+	data: {
+		labels: [],
+		datasets: [
+			{
+				label: [],
+				data: [],
+				borderRadius: 10
+			}
+		]
+	},
+	options: {
+		indexAxis: window.innerWidth < 500 ? "y" : "x",
+		elements: {
+			point: {
+				hitRadius: 10,
+				radius: 4,
+				hoverRadius: 8,
+				borderWidth: 4,
+				hoverBorderWidth: 8
+			}
+		},
+		plugins: {
+			datalabels: {
+				align: "center",
+				anchor: "end",
+				clamp: true,
+				color: "#454545",
+				display: window.innerWidth < 400,
+				font: {
+					size: 16,
+					lineHeight: 0.8,
+					weight: "bold"
+				},
+				offset: 8,
+				textStrokeColor: "#FFFFFF",
+				textStrokeWidth: 4
+			},
+			legend: {
+				display: false,
+				labels: {
+					color: "#454545",
+					font: {
+						size: 14,
+						weight: "bold"
+					},
+					pointStyle: "rectRounded",
+					padding: 16,
+					sort: function (a, b) {
+						return a.text.localeCompare(b.text);
+					},
+					usePointStyle: true
+				},
+				onClick: null,
+				position: "top"
+			},
+			title: {
+				color: "#000",
+				display: true,
+				font: {
+					size: 16,
+					weight: "bolder"
+				}
+			},
+			tooltip: {
+				callbacks: {
+					label: []
+				},
+				backgroundColor: "rgba(0, 0, 0, 0.8)",
+				bodyFont: {
+					size: 20
+				},
+				bodySpacing: 8,
+				boxPadding: 8,
+				enabled: true,
+				position: "nearest",
+				usePointStyle: true,
+				titleAlign: "center",
+				titleFont: {
+					size: 20,
+					weight: "bold"
+				}
+			}
+		},
+		layout: {
+			padding: {
+				left: 10,
+				right: 10,
+				top: 10,
+				bottom: 10
+			}
+		},
+		scales: {
+			y: {
+				beginAtZero: true,
+				grid: {
+					display: false,
+					drawOnChartArea: window.innerWidth < 400
+				},
+				ticks: {
+					font: {
+						size: window.innerWidth < 400 ? 12 : 14,
+						weight: "bold"
+					},
+					stepSize: 1, // Set step size to 1 to ensure integer values
+				}
+			},
+			x: {
+				grid: {
+					drawOnChartArea: window.innerWidth < 400
+				},
+				ticks: {
+					autoSkip: false,
+					font: {
+						size: window.innerWidth < 400 ? 12 : 14,
+						weight: "bold"
+					}
+				}
+			}
+		},
+		responsive: true,
+		maintainAspectRatio: false
+	}
+};

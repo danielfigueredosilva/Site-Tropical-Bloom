@@ -1,0 +1,40 @@
+setTimeout(() => {
+
+    // bloqueia o scroll
+    const checkboxesFullImage = document.querySelectorAll('.fullscreen-checkbox');
+
+    checkboxesFullImage.forEach( checkbox => {
+        checkbox.addEventListener("change", () => {
+            if (checkbox.checked) {
+                blockScroll();
+            }
+            if (!checkbox.checked) {
+                blockScroll(false);
+            }
+        });
+    });
+
+    // Se pressionar ESC fecha a imagem
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+            checkboxesFullImage.forEach( checkbox => {
+                if (checkbox.checked) {
+                    checkbox.checked = false;
+                    blockScroll(false);
+                }
+            });
+        }
+    });
+
+}, 0);
+
+// Bloqueia o scroll
+function blockScroll(shouldBlock = true) {
+    const body = document.querySelector('body');
+    const html = document.documentElement;
+
+    body.style.overflow = shouldBlock ? 'hidden' : '';
+    html.style.overflow = shouldBlock ? 'hidden' : '';
+    body.style.touchAction = shouldBlock ? 'none' : '';
+    html.style.touchAction = shouldBlock ? 'none' : '';
+}

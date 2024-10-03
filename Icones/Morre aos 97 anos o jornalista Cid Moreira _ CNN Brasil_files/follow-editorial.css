@@ -1,0 +1,148 @@
+.single-editorial__follow {
+    margin-bottom: 16px;
+    padding: 0 112px;
+}
+
+.single-editorial__follow__title {
+    margin: 0 0 16px;
+    font-size: 16px;
+    color: var(--clr-cnn);
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.single-editorial__follow__social__content {
+    display: flex;
+    height: 45px;
+    gap: 8px;
+}
+
+.single-editorial__follow__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    border-left: 1px solid var(--clr-cnn-placeholder);
+    border-top: 1px solid var(--clr-cnn-placeholder);
+    width: fit-content;
+    max-width: 450px;
+    height: 100%;
+}
+
+.single-editorial__follow__item {
+    height: 100%;
+    border-right: 1px solid var(--clr-cnn-placeholder);
+    border-bottom: 1px solid var(--clr-cnn-placeholder);
+    flex-grow: 1;
+    width: 108px;
+}
+
+.single-editorial__follow__link {
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-indent: -3000px;
+}
+
+.single-editorial__follow__link:hover {
+    opacity: 0.5;
+}
+
+.single-editorial--linkedin {
+    background: url('/wp-content/themes/master-theme/template-parts/single/follow-editorial/assets/img/single-follow-linkedin.svg') center center no-repeat;
+}
+
+.single-editorial--instagram {
+    background: url('/wp-content/themes/master-theme/template-parts/single/follow-editorial/assets/img/single-follow-instagram.svg') center center no-repeat;
+}
+
+.single-editorial--twitter {
+    background: url('/wp-content/themes/master-theme/template-parts/single/follow-editorial/assets/img/single-follow-x.svg') center center no-repeat;
+}
+
+.single-editorial--youtube {
+    background: url('/wp-content/themes/master-theme/template-parts/single/follow-editorial/assets/img/single-follow-youtube.svg') center center no-repeat;
+}
+
+.single-editorial--facebook {
+
+    background: url('/wp-content/themes/master-theme/template-parts/single/follow-editorial/assets/img/single-follow-facebook.svg') center center no-repeat;
+}
+
+.single-editorial--pinterest {
+    background: url('/wp-content/themes/master-theme/template-parts/single/follow-editorial/assets/img/single-follow-pinterest.svg') center center no-repeat;
+}
+
+.single-editorial--tiktok {
+    background: url('/wp-content/themes/master-theme/template-parts/single/follow-editorial/assets/img/single-follow-tiktok.svg') center center no-repeat;
+}
+
+.single-editorial--whatsapp {
+    background: url('/wp-content/themes/master-theme/template-parts/single/follow-editorial/assets/img/single-follow-whatsapp.svg') center center no-repeat;
+}
+
+.single-editorial--google {
+    height: 100%;
+    border: 1px solid var(--clr-cnn-placeholder);
+    width: 185px;
+    position: relative;
+}
+
+.single-editorial--google {
+    background: url('/wp-content/themes/master-theme/template-parts/single/follow-editorial/assets/img/single-follow-google.svg') 69px center no-repeat;
+}
+
+.single-editorial--google::before {
+    content: 'Siga no';
+    display: block;
+    position: absolute;
+    height: 20px;
+    color: #80868B;
+    font-size: 14px;
+    font-weight: 500;
+    top: 12px;
+    text-indent: 0;
+    left: calc(50% - 56px);
+    transform: translate(-50%);
+}
+
+@media(max-width: 991px){
+    .single-editorial__follow {
+        padding: 0;
+    }
+    
+    .single-editorial__follow__social__content {
+        flex-wrap: wrap;
+        height: initial;
+    }
+
+    .single-editorial__follow__list {
+        width: 100%;
+        max-width: unset;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(33.33%, 1fr));
+        border-top: 1px solid var(--clr-cnn-placeholder);
+    }
+
+    .single-editorial__follow__item {
+        height: 64px;
+        width: 100%;
+    }
+
+    .single-editorial__follow__google {
+        width: 100%;
+        height: 48px;
+    }
+
+    .single-editorial__follow__google .single-editorial__follow__link {
+        width: 100%;
+    }
+    
+    .single-editorial__follow__google .single-editorial__follow__link {
+        background-position-x: calc(50% + 32px);
+    }
+
+    .single-editorial--google::before {
+        top: 14px;
+    }
+}
