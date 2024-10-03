@@ -256,7 +256,7 @@ main{
     height: 330px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 /* Tamanho da imagem */
@@ -270,7 +270,7 @@ main{
 /* area das informacoes dos produtos */
 .area-info-produtos {
     margin: 0;
-    background: rgb(241, 241, 241);
+    background: rgb(204, 204, 204);
     width: 193.97px;
     height: 110px;
     border-radius: 0 0 10px 10px;
