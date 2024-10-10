@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+*{
+    padding:0 ;
+    margin: 0;
+}
+
+body{
+    background-color: #f6f4f0!important;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:  0 40px ;
+    background-color: var(--roxo);
+    box-shadow: 0px 0px 5px black;
+    /* width: 100%; */
+    height: 150px;
+}  
+:root{
+    --amarelo-claro:#f2d16d;
+    --amarelo-escuro:#f2bb13;
+    --roxo:#442f72;
+    --lilas:#a56da6;
+    --rosa-claro:#f2c2dc;
+
+    --fonte-padrao: "Open Sans", sans-serif;
+    --fonte-titulos: "Merriweather", serif;
+}  
+/*Cabeçalho*/
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction:column;
+    padding: 1.5rem 5rem;   
+}
+/*Parte superior do cabeçalho*/
+.nav-superior{
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 25px;
+    /* padding-right:200px; */
+    gap: 180px;
+}
+hr{
+    position: relative; 
+    right: 150px;
+    border-color:#cccccc66    ;
+    width: 830px;
+}
+/*Parte infeior do cabeçalho*/
+.nav-inferior{
+    margin-left: -183px !important;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+/*Logo*/
+.logo{ 
+    color: white;
+    display: flex;
+    font-size: 2rem;
+    padding-right: 150px;
+    /* align-self: center; */
+    /* margin-right: 80px; */
+}
+/*Menu de navegação*/
+.nav-list{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-right: 125px;
+}
+/*listas não ordenada do menu de navegação*/
+.nav-link:hover{
+    border-top: 2px solid var(--lilas);
+    padding-top: 20.5px;
+}
+/*Menu de navegação horizontal*/ 
+.navigator{
+   display: flex;
+   justify-content: center;
+   list-style: none; 
+}
+/*Itens do menu de navegação*/
+.nav-item{
+    margin: 0px 30px;
+    cursor: pointer;
+}
+/*links do menu de navegação*/
+.nav-link{
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: white;
+    font-family: var(--fonte-padrao);
+    font-weight: 400;
+}
+/*Execução de quando passar o mouse no menu de navegação*/
+
+/*Botão de entrar*/
+.btn-entrar button{
+    border: none;
+    background-color: #f2bb13;
+    padding:6px 15px;
+    border-radius:6px; 
+    cursor: pointer;  
+}
+/*Botão de cadatrar-se*/
+.btn-cadastrar-se button{
+    border: none;
+    background-color: #f2bb13;
+    padding: 6px 15px;
+    border-radius:6px;
+    cursor: pointer;
+}
+/*Botões do header*/
+.btn-menu{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: -150px; /*mover os botoes do header */
+}
+/*Link dos botões*/
+.btn-link{
+    text-decoration: none;
+    color: white;
+    font-family: var(--fonte-padrao);
+    font-weight: bold;
+}
+.btn-carrinho{
+    cursor: pointer;
+}
+/*Caixa de pesquisar*/
+.busca{
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc ;
+    background-color: #ccc;
+    width: 400px;
+    height: 25px;
+    border-radius: 20px;
+    padding: 5px 10px;
+    color: #4b4b4b;
+}
+/*Texto da área de pesquisar*/
+#txt-busca{
+    padding: 8px;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+}
+/* Inicio da area da Main */
+
+main{
+    padding: 10px;
+    width: 80%;
+    margin: 20px auto;
+    height: 1200px;
+    background: #f6f4f0;
+}
+aside{
+    float: right;
+    width: 37%;
+    
+    
+}
+#area-promocoes{
+    height: 330px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#Imagem-produto{
+    background-color: #fff;
+    width: 60%;
+    height: 700px;
+    float: left;
+    border: 1px;
+}
+
+/* formatacao do 1 container */
+#conteudo1{
+    border: 1px solid rgb(179, 179, 179);
+    background:  #fff;
+    border-radius: 5px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 45px;
+}
+
+#conteudo1 h2{
+    padding-left: 10px;
+}
+
+
+/* alinhameno do valor do produto deixando ele pra a direita */
+.preco-promocao{
+    display: flex;
+    float: right;
+    width: 30%;
+    padding-right: 20px;
+}
+
+/* Formatacao do titulo de entregas */
+.entregas-texto{
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    height: 30pxpx;
+}
+/* formatacao do titulo de promoçoes */
+.Titulo-Promocoes h1{
+    font-size: 23px;
+    font-family: 'Merriweather', serif;
+    padding-left: 0px;
+    float: left;
+    border: none;
+    width: 90%;
+}
+
+
+/* formatacao do 2 container */
+#conteudo2{
+    border: 1px solid rgb(179, 179, 179);
+    background:  #fff;
+    border-radius: 5px;
+    height: 150px;
+    padding: 10px;
+    margin-bottom: 45px;
+}
+
+.Endereço-painel{
+    float: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    
+}
+.produto-endereço{
+    background: #e2e3e3;
+    border-radius: 19px;
+    padding: 10px;
+    height: 30px;
+    font-weight: 600;
+    font-size: 13px;
+    color: #252525;
+    margin-top: 10px;
+    
+}
+.Endereço-painel a{
+    text-decoration: none ;
+    height: 20px;
+    clear: both;
+    display: flex;
+    justify-items: center;
+}
+
+.Link-endereço a{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: green;
+}
+.Link-endereço a:hover{
+    color: black;
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+    
+}
+
+
+/* conteiner 3  */
+#conteudo3{
+    border: 1px solid rgb(179, 179, 179);
+    background:  #fff;
+    border-radius: 5px;
+    height: 150px;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+.Descricao-produto{
+    width: 80%;
+    margin: 0 auto;
+}
+.Descricao-produto{
+    text-align: center;
+}
+
+
+/* conteudo 4 formatacao */
+#conteudo4{
+    width: 100%;
+    
+}
+.botao-comprar{
+    
+    width: 100%;
+    height: 52px;
+    color: #fff;
+    background: #71c042;
+    border: none;
+    font-size: 16px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+}
+.botao-carrinho{
+    float: right;
+    width: 100%;
+    height: 52px;
+    color: #fff;
+    background: #959694;
+    border: none;
+    font-size: 16px;
+    border-radius: 33px;
+    
+}
+.botao-comprar:hover{
+    
+    width: 100%;
+    height: 52px;
+    color: #050505;
+    background: #549414;
+    border: none;
+    font-size: 16px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.botao-carrinho:hover{
+    float: right;
+    width: 100%;
+    height: 52px;
+    color: #000000;
+    background: #b8b9b7;
+    border: none;
+    font-size: 16px;
+    border-radius: 33px;
+    cursor: pointer;
+    
+}
+
+
+/* area da main */
+main H1{
+    clear: both;
+    text-align: center;
+    padding: 20px;
+    font-size: 40px;
+    border-bottom: 1px solid gray;
+}
+
+
+#area-promocoes {
+    height: 330px;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    flex-wrap: no-wrap;
+    justify-content: space-between;
+}
+.area-info-produtos {
+    margin: 0;
+    background: rgb(241, 241, 241);
+    width: 193.97px;
+    height: 110px;
+    border-radius: 0 0 10px 10px;
+    padding: 10px 13px;
+}
+.text-promocao {
+    color: #747474;
+    font-size: 9px;
+    float: left;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 2px;
+}
+/* Formatação do paragrado p de dataPromocao*/
+.data-promocao p{
+    float: right;
+    padding: 0;
+    padding-bottom: 4px;
+    font-size: 13px;
+}
+.Titulo-Promocoes{
+    float: left;
+    font-size: 13px ;
+    font-family: 'Merriweather', serif;
+}
+/* Formatacao do titulo da area de promocoes */
+.Titulo-Promocoes p{
+    color: black;
+    margin: 0;
+    text-transform: uppercase;
+   
+    font-weight: bold;
+}
+.preco-promocao{
+    padding-top: 10px;
+    float: left;
+    width: 30%;
+    
+}
+.Promocao-comprar{
+    float: right;
+    padding-top: 4px;   
+}
+
+footer{
+    background-color: #442f73;
+    height: 200px; 
+}
