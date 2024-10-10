@@ -1,5 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
 /*Comando Geral*/
 *{
     padding:0 ;
@@ -21,6 +24,7 @@
     --rosa-claro:#f2c2dc;
 
     --fonte-padrao: "Open Sans", sans-serif;
+    --fonte-titulos: "Merriweather", serif;
 }
 body{
     background-color:white;
@@ -54,12 +58,13 @@ header{
 }
 hr{
     position: relative; 
-    right: 65px;
+    right: 150px;
     border-color:#cccccc66    ;
-    width: 825px;
+    width: 830px;
 }
 /*Parte infeior do cabeçalho*/
 .nav-inferior{
+    margin-left: -183px !important;
     display: flex;
     align-self: center;
     justify-content: center;
@@ -69,7 +74,7 @@ hr{
     color: white;
     display: flex;
     font-size: 2rem;
-    padding-right: 60px;
+    padding-right: 150px;
     /* align-self: center; */
     /* margin-right: 80px; */
 }
@@ -82,7 +87,7 @@ hr{
 }
 /*listas não ordenada do menu de navegação*/
 .nav-link:hover{
-    border-top: 2px solid var(--rosa-claro);
+    border-top: 2px solid var(--lilas);
     padding-top: 20.5px;
 }
 /*Menu de navegação horizontal*/ 
@@ -110,16 +115,16 @@ hr{
 .btn-entrar button{
     border: none;
     background-color: #f2bb13;
-    padding: 10px 40px;
-    border-radius:20px; 
+    padding:6px 15px;
+    border-radius:6px; 
     cursor: pointer;  
 }
 /*Botão de cadatrar-se*/
 .btn-cadastrar-se button{
     border: none;
     background-color: #f2bb13;
-    padding: 10px 60px;
-    border-radius:20px;
+    padding: 6px 15px;
+    border-radius:6px;
     cursor: pointer;
 }
 /*Botões do header*/
@@ -127,7 +132,7 @@ hr{
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-right: -125px;
+    margin-right: -150px; /*mover os botoes do header */
 }
 /*Link dos botões*/
 .btn-link{
@@ -146,7 +151,7 @@ hr{
     border: 1px solid #ccc ;
     background-color: #ccc;
     width: 400px;
-    height: 30px;
+    height: 25px;
     border-radius: 20px;
     padding: 5px 10px;
     color: #4b4b4b;
@@ -160,7 +165,7 @@ hr{
     outline: none;
 }
 /*Tela responsiva para laptop e tablets maiores*/
-@media screen and (max-width: 1260px) {
+/* @media screen and (max-width: 1260px) {
     .btn-cadastrar-se button{
     padding: 10px 20px; 
     }
@@ -168,9 +173,9 @@ hr{
         width: 400px;
         
     }
-}
+} */
 /*Tela responsiva para tablet*/
-@media screen and (max-width: 1050px) {
+/* @media screen and (max-width: 1050px) {
     header{
         width: 100%;
         height: 12vh;    
@@ -187,7 +192,7 @@ hr{
     .btn-entrar button{
         padding: 10px 15px;
     }
-}
+} */
 /*Tela resposiva para mobile*/
 @media screen and (max-width: 768px) {
     .busca, .btn-cadastrar-se, .btn-entrar, .nav-inferior{ 
@@ -252,6 +257,67 @@ hr{
         padding-top: none;
     }  */
 }
+
+section.slider{
+    margin: 0 auto;
+    padding: 0 !important;
+    margin-bottom: 30px;
+    /* width: 1150px; */
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.slider-content{
+    width: 400%;
+    height: auto;
+    display: flex;
+}
+.slider input, .img-mobile{
+    display: none;
+}
+.slide-box{
+    width: 25%;
+    height: auto;
+    position: relative;
+    text-align: center;
+    transition: 1s;
+}
+.slide-box img{
+    width: 90%;
+}
+.nav-manual, .nav-auto{
+    position: absolute;
+    width: 86%;
+    margin-top: 26%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+.nav-manual .manual-btn, .nav-auto div{
+    border: 1px solid var(--lilas);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.nav-manual .manual-btn:not(:last-child), .nav-auto div:not(:last-child){
+    margin-right: 10px;
+}
+.nav-manual .manual-btn:hover{
+    background-color: var(--lilas);
+}
+#radio1:checked ~ .nav-auto .auto-btn1, #radio2:checked ~ .nav-auto .auto-btn2, #radio3:checked ~ .nav-auto .auto-btn3 {
+    background-color: var(--lilas);
+}
+#radio1:checked ~ .primeiro{
+    margin-left: 0%;
+}
+#radio2:checked ~ .primeiro{
+    margin-left: -25%;
+}
+#radio3:checked ~ .primeiro{
+    margin-left: -50%;
+}
 /*Estilização da main*/
 main{
     background-color:  #F6F4F0;
@@ -263,11 +329,14 @@ main{
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.418);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    padding-bottom: 100px;
+    margin-bottom: 100px;
 }  
 /*Area da Main*/
-#area-promocoes {
+.area-produtos-categoria {
     height: 330px;
     display: flex;
+    margin: 0px 40px;
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -278,7 +347,7 @@ main{
 }
 /* espaçamento entre os produtos em promoção */
 .produto-promocao{
-    padding: 20px;
+    margin: 0px;
 }
 /* area das informacoes dos produtos */
 .area-info-produtos {
@@ -313,7 +382,7 @@ main{
 .Titulo-Promocoes{
     float: left;
     font-size: 13px ;
-    font-family: 'Merriweather', serif;
+    font-family: var(--fonte-titulos);
 }
 /* Formatacao do titulo da area de promocoes */
 .Titulo-Promocoes p{
@@ -332,9 +401,10 @@ main{
     float: right;
     padding-top: 4px;   
 }
-#promocao-titulo{
-    font-size: 40px;
-    padding : 15px;
+.titulos{
+    color: #403E3B;
+    font-weight: 500;
+    padding : 50px;
     margin: 0;
     text-align: center;
 }
@@ -355,4 +425,8 @@ main{
 }
 .Promocao-comprar button a{ 
     text-decoration: none;
+}
+footer{
+    background-color: var(--roxo);
+    height: 200px; 
 }
