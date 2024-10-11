@@ -28,6 +28,7 @@
 
     --fonte-padrao: "Open Sans", sans-serif;
     --fonte-titulos: "Merriweather", serif;
+    --fonte-logo: "Great Vibes", cursive;
 }
 body{
     background-color:white;
@@ -73,12 +74,22 @@ hr{
     justify-content: center;
 }
 /*Logo*/
+.logo{
+    width: 90px;
+    align-self: center;
+}
 .logo-header a { 
     display: flex;
     flex-direction: column;
     padding-right: 115px;
     text-decoration: none;
     /* margin-right: 80px; */
+}
+.logo-header a h1{
+    color: #fff;
+    font-family: var(--fonte-logo);
+    font-size: xx-large;
+    font-weight: 100;
 }
 /*Menu de navegação*/
 .nav-list{
