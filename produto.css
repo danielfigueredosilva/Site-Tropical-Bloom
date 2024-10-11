@@ -176,12 +176,24 @@ aside{
     justify-content: center;
     flex-wrap: wrap;
 }
+.img-principal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3px;
+}
 #Imagem-produto{
     background-color: #fff;
     width: 60%;
     height: 700px;
     float: left;
     border: 1px;
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+    
+    
 }
 
 /* formatacao do 1 container */
@@ -353,14 +365,35 @@ aside{
 
 
 /* area da main */
-main H1{
+main h1{
     clear: both;
     text-align: center;
     padding: 20px;
     font-size: 40px;
     border-bottom: 1px solid gray;
 }
-
+.imagem-promocao {
+    border-radius: 3px solid red;
+    background-color: #fff;
+    width: 220px;
+    height: 175px;
+    display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+}
+.imagem-promocao:hover{
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+.imagem-promocao a .img-promocao{
+    border-radius: 10px 10px 0 0;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+ }
 
 #area-promocoes {
     height: 330px;
@@ -416,7 +449,23 @@ main H1{
     padding-top: 4px;   
 }
 
+/* area do footer */
 footer{
-    background-color: #442f73;
-    height: 200px; 
+    background-color: var(--roxo);
+    height: 120px; 
+    color: white;   
+    padding: 40px; 
+    text-align: center;
+   
+}
+.direitos-reservados p{
+    font-size: 12px;
+}
+.sobre-nos{
+    margin-bottom: 20px;
+
+}
+.sobre-nos p{
+    font-size: 14px;
+
 }

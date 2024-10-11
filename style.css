@@ -80,18 +80,6 @@ hr{
     text-decoration: none;
     /* margin-right: 80px; */
 }
-.logo-header a h1{
-    color: #FFFFFF;
-    font-size:xx-large;
-    font-weight: 100;
-    font-family: "Great Vibes", cursive;
-    font-style: none;
-    /* cursor: pointer; */
-}
-.logo{
-    width: 95px;
-    align-self: center;
-}
 /*Menu de navegação*/
 .nav-list{
     display: flex;
@@ -346,6 +334,15 @@ main{
     padding-bottom: 100px;
     margin-bottom: 100px;
 }  
+formatacao
+#promocao-titulo{
+    clear: both;
+    text-align: center;
+    padding: 20px;
+    font-size: 40px;
+    border-bottom: 1px solid gray;
+}
+
 /*Area da Main*/
 .area-produtos-categoria {
     height: 330px;
@@ -357,7 +354,18 @@ main{
 }
 /* Tamanho da imagem */
 .imagem-promocao {
-    height: 170px;
+    border-radius: 3px solid red;
+    background-color: #fff;
+    width: 220px;
+    height: 175px;
+    display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+}
+.imagem-promocao:hover{
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 /* espaçamento entre os produtos em promoção */
 .produto-promocao{
@@ -373,10 +381,13 @@ main{
     padding: 10px 13px;
 }
 /* formatacao das imagens dos produtos em promocao */
-.img-promocao{
-    border-radius: 10px 10px 0 0;
-   width: 220px;
-   height: 175px;
+.imagem-promocao a .img-promocao{
+   border-radius: 10px 10px 0 0;
+   
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   
 }
 /* formatacao da area do titulo da empresa area de promocao */
 .text-promocao {
@@ -421,6 +432,11 @@ main{
     padding : 50px;
     margin: 0;
     text-align: center;
+    clear: both;
+    text-align: center;
+   
+    
+    
 }
 .Promocao-comprar button{
     margin-right: 1.1px;
@@ -440,7 +456,24 @@ main{
 .Promocao-comprar button a{ 
     text-decoration: none;
 }
+
+/* area do footer */
 footer{
     background-color: var(--roxo);
-    height: 200px; 
+    height: 120px; 
+    color: white;   
+    padding: 40px; 
+    text-align: center;
+   
+}
+.direitos-reservados p{
+    font-size: 12px;
+}
+.sobre-nos{
+    margin-bottom: 20px;
+
+}
+.sobre-nos p{
+    font-size: 14px;
+
 }
