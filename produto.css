@@ -2,13 +2,34 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+/*Comando Geral*/
 *{
     padding:0 ;
     margin: 0;
 }
+/*
+#f2d16d amarelo-claro
+#f2bb13 amarelo-escuro 
+#442f72 roxo
+#a56da6 lilas 
+#f2c2dc rosa-claro
+*/
+/*Variaveis para cores e fonte*/
+:root{
+    --amarelo-claro:#f2d16d;
+    --amarelo-escuro:#f2bb13;
+    --roxo:#442f72;
+    --lilas:#a56da6;
+    --rosa-claro:#f2c2dc;
 
+    --fonte-padrao: "Open Sans", sans-serif;
+    --fonte-titulos: "Merriweather", serif;
+    --fonte-logo: "Great Vibes", cursive;
+}
 body{
-    background-color: #f6f4f0!important;
+    background-color:white;
 }
 header{
     display: flex;
@@ -19,17 +40,7 @@ header{
     box-shadow: 0px 0px 5px black;
     /* width: 100%; */
     height: 150px;
-}  
-:root{
-    --amarelo-claro:#f2d16d;
-    --amarelo-escuro:#f2bb13;
-    --roxo:#442f72;
-    --lilas:#a56da6;
-    --rosa-claro:#f2c2dc;
-
-    --fonte-padrao: "Open Sans", sans-serif;
-    --fonte-titulos: "Merriweather", serif;
-}  
+}    
 /*Cabeçalho*/
 .nav-bar{
     display: flex;
@@ -61,13 +72,22 @@ hr{
     justify-content: center;
 }
 /*Logo*/
-.logo{ 
-    color: white;
+.logo{
+    width: 90px;
+    align-self: center;
+}
+.logo-header a { 
     display: flex;
-    font-size: 2rem;
-    padding-right: 150px;
-    /* align-self: center; */
+    flex-direction: column;
+    padding-right: 115px;
+    text-decoration: none;
     /* margin-right: 80px; */
+}
+.logo-header a h1{
+    color: #fff;
+    font-family: var(--fonte-logo);
+    font-size: xx-large;
+    font-weight: 100;
 }
 /*Menu de navegação*/
 .nav-list{
@@ -140,7 +160,7 @@ hr{
     display: flex;
     align-items: center;
     border: 1px solid #ccc ;
-    background-color: #ccc;
+    background-color: white;
     width: 400px;
     height: 25px;
     border-radius: 20px;
@@ -154,6 +174,23 @@ hr{
     background-color: transparent;
     width: 100%;
     outline: none;
+}
+
+#main-header{
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    width:400px ;
+    height: 80px;
+    margin: auto;
+    text-align:center;
+    align-content:center;
+    margin-top: 60px;
+    font-family:'Maison Neue Bolt';
+    /* font-style: normal; */
+    /* font-weight: 700; */
+    /* line-height: 41px; */
+    font-size: 16.6px ; 
+    border-radius:3px;
 }
 /* Inicio da area da Main */
 
@@ -175,6 +212,14 @@ aside{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+.area-info-produtos {
+    margin: 0;
+    background: rgb(204, 204, 204);
+    width: 193.97px;
+    height: 110px;
+    border-radius: 0 0 10px 10px;
+    padding: 10px 13px;
 }
 .img-principal{
     display: flex;
@@ -213,12 +258,53 @@ aside{
 }
 
 
+
+/* formatacao da area do titulo da empresa area de promocao */
+
+/* Formatação do paragrado p de dataPromocao*/
+.data-promocao p{
+    float: right;
+    padding: 0;
+    margin: 4px;
+    font-size: 13px;
+}
+/* Formataco do titulo da area de informacoes dos produtos */
+
+/* Formatacao do titulo da area de promocoes */
+.Titulo-Promocoes p{
+    color: black;
+    margin: 0;
+    text-transform: uppercase;
+    width: 80%;
+    font-weight: bold;
+}
+
+
 /* alinhameno do valor do produto deixando ele pra a direita */
 .preco-promocao{
     display: flex;
     float: right;
     width: 30%;
     padding-right: 20px;
+    margin-top: 15px;
+}
+.Promocao-comprar button{
+    margin-right: 1.1px;
+    margin-top: 9px;
+    width: 40px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(139, 226, 8);
+    font-size: 18px;
+}
+/* Usei hover pra quando passar o mouse nos botoes mudar o fundo e o estilo do mouse */
+.Promocao-comprar button:hover{
+    background-color: aquamarine;
+    cursor: pointer;
+}
+.Promocao-comprar button a{ 
+    text-decoration: none;
 }
 
 /* Formatacao do titulo de entregas */
@@ -237,11 +323,11 @@ aside{
     padding-left: 0px;
     float: left;
     border: none;
-    width: 90%;
+   
+    width: 300px;
 }
 
-
-/* formatacao do 2 container */
+/* * formatacao do 2 container */ 
 #conteudo2{
     border: 1px solid rgb(179, 179, 179);
     background:  #fff;
@@ -405,7 +491,7 @@ main h1{
 }
 .area-info-produtos {
     margin: 0;
-    background: rgb(241, 241, 241);
+    background: rgb(204, 204, 204);
     width: 193.97px;
     height: 110px;
     border-radius: 0 0 10px 10px;
@@ -435,18 +521,21 @@ main h1{
     color: black;
     margin: 0;
     text-transform: uppercase;
-   
     font-weight: bold;
 }
 .preco-promocao{
-    padding-top: 10px;
+
     float: left;
     width: 30%;
+}
+.preco-promocao small{
+
+   padding: 3px;
     
 }
 .Promocao-comprar{
+    
     float: right;
-    padding-top: 4px;   
 }
 
 /* area do footer */
