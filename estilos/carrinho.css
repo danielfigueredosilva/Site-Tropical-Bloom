@@ -341,6 +341,7 @@ hr{
     border-radius:6px; 
     cursor: pointer;  
 }
+p
 /*Botão de cadatrar-se*/
 .btn-cadastrar-se button{
     border: none;
