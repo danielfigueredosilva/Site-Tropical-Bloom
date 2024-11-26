@@ -330,7 +330,7 @@ formatacao
     flex-wrap: wrap;
 }
 /* Tamanho da imagem */
-.imagem-promocao {
+.imagem-promocao a{
     border-radius: 3px solid red;
     background-color: #fff;
     width: 220px;
@@ -434,22 +434,173 @@ formatacao
     text-decoration: none;
 }
 /* area do footer */
-footer{
-    background-color: var(--roxo);
-    height: 120px; 
-    color: white;   
-    padding: 40px; 
-    text-align: center;
+:root{
+    /* --------- CORES --------- */
+     --color-neutral: black;
+     --color-font-newsletter: #8888;
+     --color-neutral-10: #ffff;
+     --color-top-footer: #f6f6f6;
+     --color-neutral-20: #d9d9d9;
+     --color-body: #F9FBFF;
+ 
+ 
+ }
+ 
+ 
+
+ .top-footer{
+     align-items: center;
+     background: #747474;
+     display: flex;
+     flex-direction: row;
+     gap: 10rem;
+     justify-content: center;
+     padding: 0.5rem;
+ }
+ 
+ .font-newsletter{
+     color: white;
+     font-size: 15px;
+ }
+ 
+ .newsLetter{
+     background: var(--color-neutral-20);
+     border-radius: 6px;
+     border: none;
+     color: var(--color-neutral);
+     padding: 0.4rem;
+ }
+ 
+ .btn-form{
+     background-color: var(--color-neutral);
+     border: none;
+     border-radius: 6px;
+     color: white;
+     cursor: pointer;
+     display: inline-block;
+     font-size: 15px;
+     padding: 0.4rem;
+     text-decoration: none;
+ }
+ 
+ /* ------------- INFORMAÇÕES DO SITE -------------  */
+ ul{
+     list-style: none;
+ }
+ 
+ .info-footer{
+     background: #442f72;
+      display: flex;
+     flex-direction: row; 
+     justify-content: space-around;
+     gap: 5rem;
+     padding: 2rem 0 3rem;
+     width: 100%; 
+     color: #ccc;
+ }
+ 
+ .info-menu{
+     color: #aca8a8;
+     margin-top: 5%;
+ }
+ 
+ .info-menu:hover{
+     cursor: pointer;
+     text-decoration: underline;
+ }
+ 
+ .info-menu li{
+     font-size: 1.5rem;
+     margin-top: 5%;
+     
+     
+ }
+ 
+ .payment-methods{
+     display: flex;
+     flex-wrap:wrap;
+     gap: 1rem;
+     margin-top: 4%;
+ }
+ .info-cards:hover{
+     cursor: pointer;
+ }
+ 
+ 
+ #cards{
+     width:4rem;
+ }
+ 
+ #pix{
+     width: 2rem;
+     height: 2rem;
+ }
+ #boleto{
+     width: 2rem;
+     height: 2rem;
+ }
+ #mastercard{
+     width: 2.3rem;
+     margin-top: 4%;
+ }
+ 
+
+ .footer-bottom{
+     
+     background: #747474;
+     text-align: center;
+     padding: 0.5rem;
+ }
+
+.label{
+    background-color: #403E3B;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position:relative;
+    margin: 0px;
+    padding: 5px;
+    height: 13px;
+    width: 38px;
+}
+
+.label .ball{
+    background-color: white;
+    border-radius: 50%;
+    position:absolute;
+    top: 2px;
+    left: 2px;
+    height: 20px;
+    width: 20px;
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.checkbox{
+    opacity: 0;
+    position:absolute;
+}
+.checkbox:checked + .label .ball{
+    transform: translateX(25px);
+}
+
+.fa-moon{
+    color: #f1c407;
+}
+.fa-sun{
+    color: var(--color-review);
+}
+
+
+.dark-theme{
+   background: url(Imagens/backgroundark.png);
    
 }
-.direitos-reservados p{
-    font-size: 12px;
+.dark-theme main{
+   background-color: #3e3d41;
 }
-.sobre-nos{
-    margin-bottom: 20px;
-
-}
-.sobre-nos p{
-    font-size: 14px;
-
+.dark-theme .titulos{
+    color: white;
 }
