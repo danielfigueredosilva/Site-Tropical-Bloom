@@ -331,7 +331,7 @@ formatacao
 }
 /* Tamanho da imagem */
 .imagem-promocao a{
-    border-radius: 3px solid red;
+    border-radius: 10px 10px 0 0;
     background-color: #fff;
     width: 220px;
     height: 175px;
