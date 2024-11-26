@@ -17,3 +17,8 @@ function proximaImg(){
 
     document.getElementById('radio'+cont).checked =true;
 }
+const chk = document.getElementById('chk');
+
+chk.addEventListener('change',() => {
+    document.body.classList.toggle("dark-theme")
+});
