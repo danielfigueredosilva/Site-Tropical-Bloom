@@ -113,8 +113,6 @@ hr{
    display: flex;
    justify-content: center;
    list-style: none;
-   overflow: hidden;
-   
 }
 /*Itens do menu de navegação*/
 .nav-item{
@@ -236,9 +234,11 @@ hr{
         padding: 0px;
         display: flex;
         align-items:  normal;
-        /* padding: 0px 5px; */
         justify-content:space-between;
         /* overflow: hidden; */
+    }
+    body{
+        overflow-x: ;
     }
     .logo-header{
         display: flex;
@@ -270,6 +270,7 @@ hr{
         z-index: 1;
         transform: translate(100%);
         transition: transform 0.3s ease-in;
+        
         
     }
     .nav-bar{
@@ -337,7 +338,7 @@ section.slider{
     /* width: 1150px; */
     width: 96%;
     height: auto;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .slider-content{
     width: 400%;
