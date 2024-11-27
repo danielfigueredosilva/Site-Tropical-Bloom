@@ -31,9 +31,7 @@
 }
 body{
     background-color:white;
-    /* overflow-y: hidden; */
-    overflow: hidden;
-    overflow-y: visible;
+    overflow-x: hidden!important;
     
 }
 header{
@@ -115,6 +113,7 @@ hr{
    display: flex;
    justify-content: center;
    list-style: none;
+   overflow: hidden;
    
 }
 /*Itens do menu de navegação*/
@@ -259,7 +258,6 @@ hr{
     }
     .navigator{
         /* display: none; */
-        overflow: hidden;
         position: absolute;
         top: 15vh;
         right: 0px;
