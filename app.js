@@ -1,23 +1,14 @@
 
 let radio = document.querySelector('.manual-btn');
 let cont = 1;
-
-document.getElementById('radio1').checked =true;
-
-setInterval(() =>{
-    proximaImg()
-}, 5000);
-
-function proximaImg(){
-    cont++
-
-    if(cont > 3){
-        cont = 1;
-    }
-
-    document.getElementById('radio'+cont).checked =true;
-}
 const chk = document.getElementById('chk');
+const slider = document.querySelectorAll('.img-desktop')
+const bntPrev = document.getElementById('prev-button')
+const btnNext = document.getElementById('next-button')
+
+let currentSlide = 0;
+
+
 
 chk.addEventListener('change',() => {
     document.body.classList.toggle("dark-theme")
@@ -65,3 +56,34 @@ const mobileNavbar = new MobileNavbar(
     ".navigator li",
 );
 mobileNavbar.init();
+
+
+function hideSlider(){
+    slider.forEach(item => item.classList.remove('on'))
+}
+function showSlider(){
+    slider[currentSlide].classList.add('on')
+}
+function nextSlider(){
+    hideSlider()
+    if(currentSlide === slider.length -1){
+        currentSlide = 0
+    }
+    else{
+        currentSlide++
+    }
+    showSlider()
+}
+function prevSlider(){
+    hideSlider()
+    if(currentSlide === 0){
+        currentSlide = slider.length -1
+    }
+    else{
+        currentSlide--
+    }
+    showSlider()
+}
+
+btnNext.addEventListener('click', () => nextSlider())
+bntPrev.addEventListener('click', () => prevSlider())
