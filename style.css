@@ -228,7 +228,7 @@ header{
 } */
 /*Tela resposiva para mobile*/
 @media screen and (max-width: 768px) {
-    .btn-sla, .linha-header, .texto-logo, .btn-cadastrar-se, .btn-entrar{ 
+    .btn-sla,.linha-header, .texto-logo, .btn-cadastrar-se, .btn-entrar{ 
         display: none;
     }
     header{
