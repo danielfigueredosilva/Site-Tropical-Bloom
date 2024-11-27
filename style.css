@@ -31,7 +31,9 @@
 }
 body{
     background-color:white;
-    overflow-x: hidden;
+    /* overflow-y: hidden; */
+    overflow: hidden;
+    overflow-y: visible;
     
 }
 header{
@@ -101,6 +103,7 @@ hr{
     align-items: center;
     margin-top: 20px;
     margin-right: 125px;
+
 }
 /*listas não ordenada do menu de navegação*/
 .nav-link:hover{
@@ -112,6 +115,7 @@ hr{
    display: flex;
    justify-content: center;
    list-style: none;
+   
 }
 /*Itens do menu de navegação*/
 .nav-item{
@@ -233,9 +237,9 @@ hr{
         padding: 0px;
         display: flex;
         align-items:  normal;
-        padding: 0px 5px;
+        /* padding: 0px 5px; */
         justify-content:space-between;
-        overflow: hidden;
+        /* overflow: hidden; */
     }
     .logo-header{
         display: flex;
@@ -255,7 +259,7 @@ hr{
     }
     .navigator{
         /* display: none; */
-        /* overflow: hidden; */
+        overflow: hidden;
         position: absolute;
         top: 15vh;
         right: 0px;
@@ -277,7 +281,6 @@ hr{
         width: 100%;
         height: 20px;
         /* margin: 0px 10px; */
-
     }
     
     .navigator li{
@@ -289,18 +292,22 @@ hr{
     }
     main{
         min-height:2500px;
-    
     }
-    /* .produto-promocao{
-        padding: 50px;
-        
-    
-    }
-    .area-produtos-categoria {
-        display:flex;
+    .top-footer{
         flex-direction: column;
-        
-    } */
+    }
+    .font-newsletter{
+       margin: 0px !important;
+       margin-bottom: 5px !important;
+    }
+    .info-footer{
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu-itens-superior{
+        gap: 50px !important;
+    }
+    
 }
 .navigator.active {
     transform: translateX(0);
@@ -584,8 +591,8 @@ main{
      align-items: center;
      background: #747474;
      display: flex;
-     flex-direction: row;
-     gap: 10rem;
+     /* flex-direction: row; */
+     /* gap: 10rem; */
      justify-content: center;
      padding: 0.5rem;
  }
@@ -593,6 +600,7 @@ main{
  .font-newsletter{
      color: white;
      font-size: 15px;
+     margin-right:150px;
  }
  
  .newsLetter{
@@ -623,7 +631,7 @@ main{
  .info-footer{
      background: #442f72;
       display: flex;
-     flex-direction: row; 
+     /* flex-direction: row; */
      justify-content: space-around;
      gap: 5rem;
      padding: 2rem 0 3rem;
@@ -634,6 +642,10 @@ main{
  .info-menu{
      color: #aca8a8;
      margin-top: 5%;
+ }
+ .menu-itens-superior{
+    display: flex;
+    gap: 200px;
  }
  
  .info-menu:hover{
