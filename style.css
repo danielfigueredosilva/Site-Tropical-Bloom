@@ -417,7 +417,7 @@ main{
     padding: 0px;
     margin: 0;
 }
-.container-imagem a{
+.container-imagem{
     position: relative;
     display: flex;
     align-items: center;
