@@ -410,7 +410,7 @@ main{
     padding: 0px;
     margin: 0;
 }
-.container-imagem{
+.container-imagem a{
     position: relative;
     display: flex;
     align-items: center;
