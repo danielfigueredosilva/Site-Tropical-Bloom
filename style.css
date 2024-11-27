@@ -62,7 +62,7 @@ header{
     gap: 180px;
 }
 /*Linha do header*/
-hr{
+.linha-header{
     position: relative; 
     right: 150px;
     border-color:#cccccc66    ;
