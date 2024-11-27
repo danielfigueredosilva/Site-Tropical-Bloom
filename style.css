@@ -232,12 +232,15 @@ header{
         display: none;
     }
     header{
+        display: flex;
+        align-items: center;
         width: 100%;
         height: 15vh;
         padding: 0px 10px;
         display: flex;
-        align-items:  normal;
-        justify-content:space-between;
+        /* align-items:  normal; */
+        /* justify-content:space-between; */
+        justify-content: center;
         /* overflow: hidden; */
     }
     body{
