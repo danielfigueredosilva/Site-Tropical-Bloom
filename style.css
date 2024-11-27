@@ -31,7 +31,8 @@
 }
 body{
     background-color:white;
-    overflow: hidden;
+    overflow-x: hidden;
+    
 }
 header{
     display: flex;
@@ -234,6 +235,7 @@ hr{
         align-items:  normal;
         padding: 0px 5px;
         justify-content:space-between;
+        overflow: hidden;
     }
     .logo-header{
         display: flex;
@@ -253,6 +255,7 @@ hr{
     }
     .navigator{
         /* display: none; */
+        /* overflow: hidden; */
         position: absolute;
         top: 15vh;
         right: 0px;
