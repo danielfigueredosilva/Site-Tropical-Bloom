@@ -68,7 +68,7 @@ header{
     border-color:#cccccc66    ;
     width: 830px;
 }
-.linha-menu-mobile, .logar-entrar,.info-uteis{
+.dark-mode-mobile,.linha-menu-mobile, .logar-entrar,.info-uteis{
     display: none;
 }
 /*Parte infeior do cabeçalho*/
@@ -228,7 +228,7 @@ header{
 } */
 /*Tela resposiva para mobile*/
 @media screen and (max-width: 768px) {
-    .btn-sla, .linha, .texto-logo, .btn-cadastrar-se, .btn-entrar{ 
+    .btn-sla, .linha-header, .texto-logo, .btn-cadastrar-se, .btn-entrar{ 
         display: none;
     }
     header{
@@ -250,7 +250,7 @@ header{
         margin-right: 10px;
     }
     .nav-superior{
-        gap: 0;
+        gap: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -286,7 +286,7 @@ header{
         
     }
     .logar-entrar{
-        display: flex;
+        display: flex !important;
         /* height: 0px;
         margin-top: 10px;
         margin-bottom: 25px; */
@@ -294,8 +294,19 @@ header{
         
         
     }
+    .linha-menu-mobile, .logar-entrar,.info-uteis{
+        display: block;
+    }
+    .linha-menu-mobile{
+        width: 100%;
+    }
     .nav-item{
         margin: 20px 20px;
+    }
+    .dark-mode-mobile{
+        display: block;
+    
+        margin: 15px;
     }
     .nav-bar{
         padding: 24px 0px;
@@ -341,8 +352,7 @@ header{
     }
     .btn-carrinho{
         /* width: 30px !important; */
-    }
-    
+    }  
 }
 /*Ativação do menu hamburguer*/
 .navigator.active {
