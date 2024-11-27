@@ -68,6 +68,9 @@ hr{
     border-color:#cccccc66    ;
     width: 830px;
 }
+.linha-menu-mobile, .logar-entrar,.info-uteis{
+    display: none;
+}
 /*Parte infeior do cabeçalho*/
 .nav-inferior{
     margin-left: -183px !important;
