@@ -238,7 +238,7 @@ hr{
         /* overflow: hidden; */
     }
     body{
-        overflow-x: ;
+        overflow-x: hidden;
     }
     .logo-header{
         display: flex;
