@@ -229,7 +229,7 @@ aside{
     padding: 3px;
 }
 #Imagem-produto{
-    background-color: #fff;
+   
     width: 60%;
     height: 700px;
     float: left;
@@ -288,21 +288,7 @@ aside{
     padding-right: 20px;
     margin-top: 15px;
 }
-.Promocao-comprar button{
-    margin-right: 1.1px;
-    margin-top: 9px;
-    width: 40px;
-    height: 30px;
-    border-radius: 15px;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(139, 226, 8);
-    font-size: 18px;
-}
-/* Usei hover pra quando passar o mouse nos botoes mudar o fundo e o estilo do mouse */
-.Promocao-comprar button:hover{
-    background-color: aquamarine;
-    cursor: pointer;
-}
+
 .Promocao-comprar button a{ 
     text-decoration: none;
 }
@@ -402,6 +388,21 @@ aside{
     width: 100%;
     
 }
+.Promocao-comprar button{
+    margin-right: 1.1px;
+    margin-top: 9px;
+    width: 40px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+    font-size: 18px;
+}
+/* Usei hover pra quando passar o mouse nos botoes mudar o fundo e o estilo do mouse */
+.Promocao-comprar button:hover{
+    background-color: rgb(186, 186, 186);
+    cursor: pointer;
+}
 .botao-comprar{
     
     width: 100%;
@@ -458,8 +459,8 @@ main h1{
     font-size: 40px;
     border-bottom: 1px solid gray;
 }
-.imagem-promocao {
-    border-radius: 3px solid red;
+.imagem-promocao a{
+    border-radius: 10px 10px 0 0;
     background-color: #fff;
     width: 220px;
     height: 175px;
@@ -539,22 +540,125 @@ main h1{
 }
 
 /* area do footer */
-footer{
-    background-color: var(--roxo);
-    height: 120px; 
-    color: white;   
-    padding: 40px; 
-    text-align: center;
-   
-}
-.direitos-reservados p{
-    font-size: 12px;
-}
-.sobre-nos{
-    margin-bottom: 20px;
+:root{
+    /* --------- CORES --------- */
+     --color-neutral: black;
+     --color-font-newsletter: #8888;
+     --color-neutral-10: #ffff;
+     --color-top-footer: #f6f6f6;
+     --color-neutral-20: #d9d9d9;
+     --color-body: #F9FBFF;
+ 
+ 
+ }
+ 
+ 
 
-}
-.sobre-nos p{
-    font-size: 14px;
+ .top-footer{
+     align-items: center;
+     background: #747474;
+     display: flex;
+     /* flex-direction: row; */
+     /* gap: 10rem; */
+     justify-content: center;
+     padding: 0.5rem;
+ }
+ 
+ .font-newsletter{
+     color: white;
+     font-size: 15px;
+     margin-right:150px;
+ }
+ 
+ .newsLetter{
+     background: var(--color-neutral-20);
+     border-radius: 6px;
+     border: none;
+     color: var(--color-neutral);
+     padding: 0.4rem;
+ }
+ 
+ .btn-form{
+     background-color: var(--color-neutral);
+     border: none;
+     border-radius: 6px;
+     color: white;
+     cursor: pointer;
+     display: inline-block;
+     font-size: 15px;
+     padding: 0.4rem;
+     text-decoration: none;
+ }
+ 
+ /* ------------- INFORMAÇÕES DO SITE -------------  */
+ ul{
+     list-style: none;
+ }
+ 
+ .info-footer{
+     background: #442f72;
+      display: flex;
+     /* flex-direction: row; */
+     justify-content: space-around;
+     gap: 5rem;
+     padding: 2rem 0 3rem;
+     width: 100%; 
+     color: #ccc;
+ }
+ 
+ .info-menu{
+     color: #aca8a8;
+     margin-top: 5%;
+ }
+ .menu-itens-superior{
+    display: flex;
+    gap: 200px;
+ }
+ 
+ .info-menu:hover{
+     cursor: pointer;
+     text-decoration: underline;
+ }
+ 
+ .info-menu li{
+     font-size: 1.5rem;
+     margin-top: 5%;
+     
+     
+ }
+ 
+ .payment-methods{
+     display: flex;
+     flex-wrap:wrap;
+     gap: 1rem;
+     margin-top: 4%;
+ }
+ .info-cards:hover{
+     cursor: pointer;
+ }
+ 
+ 
+ #cards{
+     width:4rem;
+ }
+ 
+ #pix{
+     width: 2rem;
+     height: 2rem;
+ }
+ #boleto{
+     width: 2rem;
+     height: 2rem;
+ }
+ #mastercard{
+     width: 2.3rem;
+     margin-top: 4%;
+ }
+ 
 
-}
+ .footer-bottom{
+     
+     background: #747474;
+     text-align: center;
+     padding: 0.5rem;
+ }
