@@ -302,11 +302,12 @@ header{
         margin-right: 10px;
     }
     .nav-superior{
-        gap: 10px;
+        gap: 1px !important;
         display: flex;
         align-items: center;
         justify-content: center;
         margin-top:8%;
+        width: 100%;
 
               
     }
