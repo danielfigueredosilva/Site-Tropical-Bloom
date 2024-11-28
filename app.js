@@ -8,12 +8,11 @@ const btnNext = document.getElementById('next-button')
 
 let currentSlide = 0;
 
-
-
 chk.addEventListener('change',() => {
     document.body.classList.toggle("dark-theme")
 });
 
+// Menu mobile
 class MobileNavbar {
     constructor(mobileMenu, navList, navLinks) {
         this.mobileMenu = document.querySelector(mobileMenu);

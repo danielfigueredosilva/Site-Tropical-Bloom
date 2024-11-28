@@ -44,7 +44,7 @@ header{
     box-shadow: 0px 0px 5px black;
     width: 100%;
     height: 150px;
-    
+     
 }    
 /*Cabeçalho*/
 .nav-bar{
@@ -186,6 +186,55 @@ header{
     width: 100%;
     outline: none;
 }
+/*Modo escuro*/
+.label{
+    background-color: #403E3B;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position:relative;
+    margin: 0px;
+    padding: 5px;
+    height: 13px;
+    width: 38px;
+}
+.label .ball{
+    background-color: white;
+    border-radius: 50%;
+    position:absolute;
+    top: 2px;
+    left: 2px;
+    height: 20px;
+    width: 20px;
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+.checkbox{
+    opacity: 0;
+    position:absolute;
+}
+.checkbox:checked + .label .ball{
+    transform: translateX(25px);
+}
+.fa-moon{
+    color: #f1c407;
+}
+.fa-sun{
+    color: var(--color-review);
+}
+.dark-theme{
+   background: url(Imagens/backgroundark.png);
+   
+}
+.dark-theme main{
+   background-color: #3e3d41;
+}
+.dark-theme .titulos{
+    color: white;
+}
+
 /*Icone do menu hamburguer animado*/
 .mobile-menu {
     display: none;
@@ -452,7 +501,9 @@ main{
     margin: auto; 
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.418);
     border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
     padding-bottom: 100px;
     margin-bottom: 50px;
     margin-top: 50px;
@@ -634,12 +685,7 @@ main{
      --color-top-footer: #f6f6f6;
      --color-neutral-20: #d9d9d9;
      --color-body: #F9FBFF;
- 
- 
  }
- 
- 
-
  .top-footer{
      align-items: center;
      background: #747474;
@@ -663,7 +709,6 @@ main{
      color: var(--color-neutral);
      padding: 0.4rem;
  }
- 
  .btn-form{
      background-color: var(--color-neutral);
      border: none;
@@ -675,7 +720,7 @@ main{
      padding: 0.4rem;
      text-decoration: none;
  }
- 
+
  /* ------------- INFORMAÇÕES DO SITE -------------  */
  ul{
      list-style: none;
@@ -708,9 +753,7 @@ main{
  
  .info-menu li{
      font-size: 1.5rem;
-     margin-top: 5%;
-     
-     
+     margin-top: 5%;   
  }
  
  .payment-methods{
@@ -740,64 +783,9 @@ main{
      width: 2.3rem;
      margin-top: 4%;
  }
- 
-
  .footer-bottom{
      
      background: #747474;
      text-align: center;
      padding: 0.5rem;
- }
-
-.label{
-    background-color: #403E3B;
-    border-radius: 50px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position:relative;
-    margin: 0px;
-    padding: 5px;
-    height: 13px;
-    width: 38px;
-}
-
-.label .ball{
-    background-color: white;
-    border-radius: 50%;
-    position:absolute;
-    top: 2px;
-    left: 2px;
-    height: 20px;
-    width: 20px;
-    transform: translateX(0px);
-    transition: transform 0.2s linear;
-}
-
-.checkbox{
-    opacity: 0;
-    position:absolute;
-}
-.checkbox:checked + .label .ball{
-    transform: translateX(25px);
-}
-
-.fa-moon{
-    color: #f1c407;
-}
-.fa-sun{
-    color: var(--color-review);
-}
-
-
-.dark-theme{
-   background: url(Imagens/backgroundark.png);
-   
-}
-.dark-theme main{
-   background-color: #3e3d41;
-}
-.dark-theme .titulos{
-    color: white;
 }
