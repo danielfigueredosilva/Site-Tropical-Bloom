@@ -31,7 +31,7 @@
 body{
     background-image: url(../Imagens/BackgroundPrincipal.jpg);
     
-    /* overflow-x: hidden!important; */
+    overflow-x: hidden!important;
     
 }
 header{
