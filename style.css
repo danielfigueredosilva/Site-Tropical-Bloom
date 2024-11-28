@@ -30,7 +30,8 @@
     --fonte-logo: "Great Vibes", cursive;
 }
 body{
-    background-color:white;
+    background-image: url(Imagens/BackgroundPrincipal.jpg);
+    
     overflow-x: hidden!important;
     
 }
@@ -445,7 +446,7 @@ section.slider{
 }
 /*Estilização da main*/
 main{
-    background-color:  #F6F4F0;
+    background-color:  rgb(245, 243, 239);
     min-width: 200px;
     max-width: 1350px;
     margin: auto; 
@@ -455,6 +456,7 @@ main{
     padding-bottom: 100px;
     margin-bottom: 50px;
     margin-top: 50px;
+    
 } 
 /* Carrosel  */
 .slider-content{
@@ -536,6 +538,7 @@ main{
 /* espaçamento entre os produtos em promoção */
 .produto-promocao{
     margin: 0px;
+    margin-top: 30px;
 }
 /* area das informacoes dos produtos */
 .area-info-produtos {
