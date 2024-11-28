@@ -289,7 +289,7 @@ header{
         padding: 0px 10px;
         display: flex;
         align-items:  normal;
-        justify-content:space-between;
+        /* justify-content:space-between; */
         overflow: hidden;
     }
     body{
@@ -315,6 +315,7 @@ header{
     }
     .logo{
         width: 60px;
+        margin-bottom: 20px;
     }
     .btn-menu{
         margin: 0px 20px;
