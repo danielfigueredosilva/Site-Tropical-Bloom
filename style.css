@@ -611,12 +611,12 @@ main{
     height: 30px;
     border-radius: 15px;
     background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(139, 226, 8);
+    border: 1px solid rgb(0, 0, 0);
     font-size: 18px;
 }
 /* Usei hover pra quando passar o mouse nos botoes mudar o fundo e o estilo do mouse */
 .Promocao-comprar button:hover{
-    background-color: aquamarine;
+    background-color: rgb(186, 186, 186);
     cursor: pointer;
 }
 .Promocao-comprar button a{ 
