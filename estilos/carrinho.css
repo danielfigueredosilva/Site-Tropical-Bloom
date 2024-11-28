@@ -31,7 +31,7 @@
 body{
     background-image: url(../Imagens/BackgroundPrincipal.jpg);
     
-    overflow-x: hidden!important;
+    /* overflow-x: hidden!important; */
     
 }
 header{
@@ -68,7 +68,7 @@ header{
     border-color:#cccccc66    ;
     width: 830px;
 }
-.dark-mode-mobile,.linha-menu-mobile, .logar-entrar,.info-uteis{
+.content-mobile, .dark-mode-mobile,.linha-menu-mobile, .logar-entrar,.info-uteis{
     display: none;
 }
 /*Parte infeior do cabeçalho*/
@@ -247,8 +247,11 @@ header{
     transition: 0.3s;
 }
 @media screen and (max-width: 768px) {
-    .btn-sla,.linha-header, .texto-logo, .btn-cadastrar-se, .btn-entrar{ 
-        display: none;
+    .content-desktop, .btn-sla,.linha-header, .texto-logo, .btn-cadastrar-se, .btn-entrar{ 
+        display: none !important;
+    }
+    .content-mobile, .linha-menu-mobile, .logar-entrar,.info-uteis{
+        display: block;
     }
     header{
         display: flex;
@@ -257,8 +260,8 @@ header{
         height: 15vh;
         padding: 0px 10px;
         display: flex;
-        /* align-items:  normal; */
-        /* justify-content:space-between; */
+        align-items:  normal;
+        justify-content:space-between;
         justify-content: center;
         overflow: hidden;
     }
@@ -305,6 +308,7 @@ header{
         transform: translate(100%);
         transition: transform 0.3s ease-in;
         overflow: hidden;
+    
         
     }
     .logar-entrar{
@@ -315,9 +319,6 @@ header{
         gap: 60px;
         
         
-    }
-    .linha-menu-mobile, .logar-entrar,.info-uteis{
-        display: block;
     }
     .linha-menu-mobile{
         width: 100%;
@@ -346,9 +347,45 @@ header{
         display: block;
         margin-bottom: 2px;
     }
-    main{
-        min-height:2500px;
-        /* display: flex; */
+    .main{
+        /* width: 100%; */
+    /* min-width: 200; */
+    height: auto;
+    /* background-color: #ccc; */
+    /* border:1px solid white; */
+    /* color: white; */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding:  30px 30px;
+    }
+    .main:first-child{
+        display: flex;
+        align-items: center;
+    }
+    .page-title{
+        font-size: 20px !important;
+        margin-top: -35px !important;
+       
+    }
+    .preco{
+        margin-top: 15px;
+    }
+    aside{
+        width: 100%;
+        padding-top: 30px !important;
+        margin-left: 0px !important;
+        border-radius: 10px !important;
+    }
+    .header{
+        border-top-left-radius:10px ;
+    }
+    aside > button{
+        width: 90.3% !important;
+        /* border-radius: 5px; */
     }
     .slider-content{
         min-height: 30vh !important;
@@ -433,18 +470,20 @@ main{
     margin-top: 50px;
 }  
 .main{
-    /* width: 400px;
-    height: auto;
-    background-color: #ccc;
-    border:1px solid white;
-    color: white;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 10px;
-    padding-top: 30px; */
-    padding: 0 30px 30px;
+    /* width: 100%; */
+    /* min-width: 200; */
+    /* height: auto; */
+    /* background-color: #ccc; */
+    /* border:1px solid white; */
+    /* color: white; */
+    /* margin: auto; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* border-radius: 10px; */
+    /* padding-top: 30px; */
+    padding:  30px 30px;
+
 
 }
 button{
@@ -457,19 +496,20 @@ button{
     text-align: center;
 }
 /*Conteudo do carrinho*/
-.content{
-    display: flex;    
+.content-desktop{
+    display: flex; 
 }
-.content section{
+.content-desktop section{
     flex: 1;
 }
-.content aside{
+.content-desktop aside{
     min-width: 250px;
 }
 
 /*Tabela carrinho*/
 table{
     width: 100%;
+    /* min-width: 100px; */
     border-collapse: collapse;
 }
 table thead tr{
@@ -505,7 +545,7 @@ table tbody tr td {
     margin-left: 20px;
 }
 .produto-carrinho .info .categoria{
-    color: #666;
+    /* color: #666; */
 }
 .produto-carrinho .info .nome{
     font: size 20px;
@@ -554,21 +594,21 @@ table tbody tr td {
     margin:0 10px ;
 }
 aside{
-margin-left:30px ;
+    margin-left:30px ;
 }
+/*Caixa resumo compra*/
 aside .box{
     margin: 15px;
     border: 1px solid #ccc;
-
     background: #ddd;
-
+    border-radius: 5px;
 }
 aside .box .header{
+    text-align: center;
     padding: 15px 20px;
     font-size: 18px;
     border-bottom: 1px solid #ccc;
 }
-
 aside .box .info{
     padding: 20px;
     font-size: 16px;
@@ -581,6 +621,7 @@ aside .box .info > div{
     margin: 0;
    }
 }
+/*Adicionar desconto*/
 aside .box .info button{
     color: green;
     background: transparent;
@@ -589,7 +630,7 @@ aside .box .info button{
     align-items: center;
     font-size: 16px;
 }
-aside .box .info i{
+aside .box .info i {
     font-size: 18px;
 }
 aside .box .footer{
@@ -598,18 +639,19 @@ aside .box .footer{
     background: #ccc;
     font-size: 18px;
 }
-
+/*Botão finalizar compra*/
 aside > button{
     border: 0;
     padding: 15px 0;
     color: white;
     background: green;
     display: block;
-    width:89%;
+    width:90%;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-left: 15px;
     font-size: 16px;
+    border-radius: 5px;
 }  
 /* area do footer */
 :root{
