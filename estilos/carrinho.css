@@ -299,7 +299,7 @@ header{
         top: 15vh;
         right: 0px;
         width: 50vw;
-        height: 70vh;
+        height: 75vh;
         background: var(--roxo);  
         flex-direction: column;
         align-items: start;
@@ -308,20 +308,20 @@ header{
         transform: translate(100%);
         transition: transform 0.3s ease-in;
         overflow: hidden;
-    
-        
     }
+    .nav-link:hover{
+        border-top:none;
+    }  
     .logar-entrar{
         display: flex !important;
         /* height: 0px;
         margin-top: 10px;
         margin-bottom: 25px; */
-        gap: 60px;
-        
-        
+        gap: 45px;
     }
     .linha-menu-mobile{
         width: 100%;
+        border-color: rgba(30, 91, 93, 0.262);
     }
     .nav-item{
         margin: 20px 20px;
@@ -633,11 +633,13 @@ aside .box .info button{
 aside .box .info i {
     font-size: 18px;
 }
+/*Total valor */
 aside .box .footer{
     padding: 15px 20px;
     padding: 20px;
     background: #ccc;
     font-size: 18px;
+    text-align: center;
 }
 /*Botão finalizar compra*/
 aside > button{

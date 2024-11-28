@@ -288,7 +288,7 @@ header{
         height: 15vh;
         padding: 0px 10px;
         display: flex;
-        /* align-items:  normal; */
+        align-items:  normal;
         /* justify-content:space-between; */
         justify-content: center;
         /* overflow: hidden; */
@@ -327,7 +327,7 @@ header{
         top: 15vh;
         right: 0px;
         width: 50vw;
-        height: 70vh;
+        height: 75vh;
         background: var(--roxo);  
         flex-direction: column;
         align-items: start;
@@ -338,20 +338,23 @@ header{
         overflow: hidden;
         
     }
+
+    .nav-link:hover, .nav-link{
+        border-top:none !important;
+    }    
     .logar-entrar{
         display: flex !important;
         /* height: 0px;
         margin-top: 10px;
         margin-bottom: 25px; */
-        gap: 60px;
-        
-        
+        gap: 45px;  
     }
     .linha-menu-mobile, .logar-entrar,.info-uteis{
         display: block;
     }
     .linha-menu-mobile{
         width: 100%;
+        border-color: rgba(30, 91, 93, 0.262);
     }
     .nav-item{
         margin: 20px 20px;
