@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../estilos/login.css">
+    <link rel="stylesheet" href="../../style.css">
     <title>Login</title>
 </head>
 <body>
@@ -39,9 +40,9 @@
                 <div class="nav-list">            
                     <ul class="navigator">
                         <li class="nav-item"><a href="#" class="nav-link">Categorias de Flores</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Flores de corte<a><li>
-                        <li class="nav-item"><a href="#" class="nav-link">Buquês e Arranjos</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Plantas Ornamentais</a></li>
+                        <li class="nav-item"><a href="CategoriasGerais/floresDeCorte.html" class="nav-link">Flores de corte<a><li>
+                        <li class="nav-item"><a href="CategoriasGerais/buquesArranjos.html" class="nav-link">Buquês e Arranjos</a></li>
+                        <li class="nav-item"><a href="CategoriasGerais/ornamentais.html" class="nav-link">Plantas Ornamentais</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Promoções</a></li>
                     </ul>
                 </div>
@@ -68,18 +69,84 @@
         
 </main>
 
-    <footer>
-        <div style="margin-bottom: 20px;">
-            <h2 style="font-family: 'Open Sans', sans-serif; margin: 0;">Tropical Bloom</h2>
-            <p style="font-size: 14px;">Transformando seu espaço com a beleza da natureza</p>
+<footer class="footer-container">
+
+    <!-- ------------- NEWSLETTER ------------- -->
+    <div class="top-footer">
+        <span class="font-newsletter">Receba as notícias sobre as promoções</span>
+
+        <form action="">
+            <input type="email" id="email" name="email" placeholder="Endereço de e-mail" class="newsLetter">
+            <button type="submit" class="btn-form">Enviar</button>
+        </form>
+    </div>
+
+    <!-- ------------- INFORMAÇÕES DO SITE ------------- -->
+    <div class="info-footer">
+        <div class="menu-itens-superior">
+            <div class="menu-itens">
+                <ul class="contacts">
+                    <span class="title-footer">Nosso Contato</span>
+                    <li class="info-menu">Fale Conosco</li>
+                    <li class="info-menu">Representantes</li>
+                    <li class="info-menu">Nossa Loja</li>
+                </ul>
+            </div>
+            <div class="menu-itens">
+                <ul>
+                    <span class="title-footer">Dúvidas</span>
+                    <li class="info-menu">Central de Atendimento</li>
+                    <li class="info-menu">Política de Troca e Devolução</li>
+                    <li class="info-menu">Envios e entregas</li>
+                </ul>
+            </div>
         </div>
-        <div class="sobre-nos">
-            <h4>Sobre nós</h4>
-            <p>Conheça nossa missão e visão de trazer mais verde para sua vida.</p>
+
+        <div class="menu-cards">
+            <span class="title-footer">Formas de Pagamento</span>
+            <ul class="payment-methods">
+                <li class="info-cards">
+                    <img src="../../Imagens/cartao/visa.png" alt="visa" id="cards">
+                </li>
+                <li class="info-cards">
+                    <img src="../../Imagens/cartao/mastercard.png" alt="mastercard" id="mastercard">
+                </li>
+                <li class="info-cards">
+                    <img src="../../Imagens/cartao/elo.png" alt="elo" id="cards">
+                </li>
+                <li class="info-cards">
+                    <img src="../../Imagens/cartao/hipercard.png" alt="hiper" id="cards">
+                </li>
+                <li class="info-cards">
+                    <img src="../../Imagens/cartao/pix.png" alt="pix" id="pix">
+                </li>
+                <li class="info-cards">
+                    <img src="../../Imagens/cartao/boleto.png" alt="boleto" id="boleto">
+                </li>
+            </ul>
         </div>
-        <div class="direitos-reservados">
-            <p>Todos os direitos reservados &copy; 2024 Tropical Bloom</p>
+
+        <div class="menu-itens">
+            <ul class="social-media">
+                <span class="title-footer">Redes Sociais</span>
+                <li class="info-menu">
+                    <i class="fa-brands fa-instagram"></i>
+                    @FloralBloom
+                </li>
+                <li class="info-menu">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    FloralBloomOficial
+                </li>
+            </ul>
         </div>
-    </footer>
+
+    </div>
+
+    <!-- ------------- INFORMAÇÕES DE LOCALIZAÇÃO ------------- -->
+    <div class="footer-bottom">
+        <span class="font-newsletter">Recife, Pernambuco | CNPJ: | &#169; 2024 Todos os direitos reservados Floral
+            Blom</span>
+    </div>
+</footer>
 </body>
 </html>

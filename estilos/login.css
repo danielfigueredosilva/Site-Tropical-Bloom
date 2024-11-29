@@ -284,13 +284,7 @@ form{
 .main p a{
     text-decoration: none;
 }
-footer{
-    background-color: var(--roxo);
-    height: 120px; 
-    color: white;   
-    padding: 40px; 
-    text-align: center; 
-}
+
 .direitos-reservados p{
     font-size: 12px;
 }
