@@ -165,7 +165,7 @@ header{
 .busca{
     display: flex;
     align-items: center;
-    border: 1px solid #ccc ;
+    border: 1px solid white ;
     background-color: white;
     width: 400px;
     height: 25px;

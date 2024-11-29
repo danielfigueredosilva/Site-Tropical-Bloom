@@ -18,11 +18,12 @@
 */
 /*Variaveis para cores e fonte*/
 :root{
-    --amarelo-claro:#f2d16d;
-    --amarelo-escuro:#f2bb13;
-    --roxo:#442f72;
-    --lilas:#a56da6;
-    --rosa-claro:#f2c2dc;
+    --cor1:#d64260;
+    --cor2:#f26684;
+    --cor3:#ffc7c9;
+    --cor4:#f28087;
+    --cor5:#f26684;
+
 
     --fonte-padrao: "Open Sans", sans-serif;
     --fonte-titulos: "Merriweather", serif;
@@ -39,7 +40,7 @@ header{
     align-items: center;
     justify-content: center;
     /* padding:  0 40px; */
-    background-color: var(--roxo);
+    background-color: var(--cor1);
     box-shadow: 0px 0px 5px black;
     width: 100%;
     height: 150px;
@@ -65,7 +66,7 @@ header{
 .linha-header{
     position: relative; 
     right: 150px;
-    border-color:#cccccc66    ;
+    border-color:white;
     width: 830px;
 }
 .content-mobile, .dark-mode-mobile,.linha-menu-mobile, .logar-entrar,.info-uteis{
@@ -108,7 +109,7 @@ header{
 }
 /*listas não ordenada do menu de navegação*/
 .nav-link:hover{
-    border-top: 2px solid var(--lilas);
+    border-top: 2px solid var(--color-neutral-10);
     padding-top: 20.5px;
 }
 /*Menu de navegação horizontal*/ 
@@ -135,7 +136,7 @@ header{
 /*Botão de entrar*/
 .btn-entrar button{
     border: none;
-    background-color: #f2bb13;
+    background-color: var(--cor2);
     padding:6px 15px;
     border-radius:6px; 
     cursor: pointer;  
@@ -143,7 +144,7 @@ header{
 /*Botão de cadatrar-se*/
 .btn-cadastrar-se button{
     border: none;
-    background-color: #f2bb13;
+    background-color: var(--cor2);
     padding: 6px 15px;
     border-radius:6px;
     cursor: pointer;
@@ -169,8 +170,8 @@ header{
 .busca{
     display: flex;
     /* align-items: center; */
-    border: 1px solid #ccc ;
-    background-color: #ccc;
+    border: 1px solid white;
+    background-color: white;
     width: 400px;
     height: 25px;
     border-radius: 20px;
