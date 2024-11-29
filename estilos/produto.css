@@ -29,7 +29,7 @@
     --fonte-logo: "Great Vibes", cursive;
 }
 body{
-    background-color:white;
+   background-image: url(../Imagens/BackgroundPrincipal.jpg);
 }
 header{
     display: flex;
