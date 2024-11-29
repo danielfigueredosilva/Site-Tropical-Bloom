@@ -100,7 +100,7 @@ header{
 }
 /*listas não ordenada do menu de navegação*/
 .nav-link:hover{
-    border-top: 2px solid var(--lilas);
+    border-top: 2px solid var(--color-neutral-10);
     padding-top: 20.5px;
 }
 /*Menu de navegação horizontal*/ 
@@ -363,8 +363,11 @@ li{
     font-size: 14px;
 }
 .main p a {
-    color: var(--lilas) ;
+    color: var(--cor3) ;
     text-decoration: none;
+}
+.main:last-child p  a{
+    color: var(--cor5);
 }
 /* area do footer */
 :root{

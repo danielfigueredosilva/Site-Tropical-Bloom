@@ -109,7 +109,7 @@ header{
 }
 /*listas não ordenada do menu de navegação*/
 .nav-link:hover{
-    border-top: 2px solid var(--lilas);
+    border-top: 2px solid var(--color-neutral-10);
     padding-top: 20.5px;
 }
 /*Menu de navegação horizontal*/ 
@@ -330,7 +330,7 @@ header{
         right: 0px;
         width: 50vw;
         height: 75vh;
-        background: var(--roxo);  
+        background: var(--cor1);  
         flex-direction: column;
         align-items: start;
         justify-content: space-around;
