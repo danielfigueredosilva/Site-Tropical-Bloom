@@ -18,25 +18,27 @@
 */
 /*Variaveis para cores e fonte*/
 :root{
-    --amarelo-claro:#f2d16d;
-    --amarelo-escuro:#f2bb13;
-    --roxo:#442f72;
-    --lilas:#a56da6;
-    --rosa-claro:#f2c2dc;
+    --cor1:#d64260;
+    --cor2:#f26684;
+    --cor3:#ffc7c9;
+    --cor4:#f28087;
+    --cor5:#f26684;
 
     --fonte-padrao: "Open Sans", sans-serif;
     --fonte-titulos: "Merriweather", serif;
     --fonte-logo: "Great Vibes", cursive;
 }
 body{
-    background-color:white;
+    background-image: url(../Imagens/BackgroundPrincipal.jpg);
+    
+    overflow-x: hidden!important;
 }
 header{
     display: flex;
     align-items: center;
     justify-content: center;
     padding:  0 40px ;
-    background-color: var(--roxo);
+    background-color: var(--cor1);
     box-shadow: 0px 0px 5px black;
     /* width: 100%; */
     height: 150px;
@@ -58,10 +60,10 @@ header{
     /* padding-right:200px; */
     gap: 180px;
 }
-hr{
+.linha-header{
     position: relative; 
     right: 150px;
-    border-color:#cccccc66    ;
+    border-color:white  ;
     width: 830px;
 }
 /*Parte infeior do cabeçalho*/
@@ -125,7 +127,7 @@ hr{
 /*Botão de entrar*/
 .btn-entrar button{
     border: none;
-    background-color: #f2bb13;
+    background-color: var(--cor2);
     padding:6px 15px;
     border-radius:6px; 
     cursor: pointer;  
@@ -133,7 +135,7 @@ hr{
 /*Botão de cadatrar-se*/
 .btn-cadastrar-se button{
     border: none;
-    background-color: #f2bb13;
+    background-color: var(--cor2);
     padding: 6px 15px;
     border-radius:6px;
     cursor: pointer;
@@ -175,6 +177,54 @@ hr{
     width: 100%;
     outline: none;
 }
+/*Modo escuro*/
+.label{
+    background-color: #403E3B;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position:relative;
+    margin: 0px;
+    padding: 5px;
+    height: 13px;
+    width: 38px;
+}
+.label .ball{
+    background-color: white;
+    border-radius: 50%;
+    position:absolute;
+    top: 2px;
+    left: 2px;
+    height: 20px;
+    width: 20px;
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+.checkbox{
+    opacity: 0;
+    position:absolute;
+}
+.checkbox:checked + .label .ball{
+    transform: translateX(25px);
+}
+.fa-moon{
+    color: #f1c407;
+}
+.fa-sun{
+    color: var(--color-review);
+}
+.dark-theme{
+   background: url(../Imagens/backgroundark.png);
+   
+}
+.dark-theme main{
+   background-color: #3e3d41;
+}
+.dark-theme .titulos{
+    color: white;
+}
 
 #main-header{
     background-color: rgba(0, 0, 0, 0.75);
@@ -193,18 +243,21 @@ hr{
     border-radius:3px;
 }
 main{
+    /* background-color:  rgba(213, 194, 209, 0.927); */
     background-color:  #F6F4F0;
     min-width: 200px;
     max-width: 1350px;
-    min-height: 400px;
     margin: auto; 
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.418);
     border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
     padding-bottom: 100px;
-    margin-bottom: 100px;
-    padding-top: 20px;
-}  
+    margin-bottom: 50px;
+    margin-top: 50px;
+    padding-top: 50px;
+}
 .main{
     width: 400px;
     height: auto;
@@ -231,6 +284,10 @@ li{
 }
 
 #btn-facebook, #btn-google{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     background-color: white ;
     width: 320px;
     height: 40px;
@@ -241,6 +298,13 @@ li{
     font-size: 14px;
     cursor: pointer;  
 }
+.logo-google{
+    width: 30px;
+    /* display: none; */
+}
+.logo-facebook{
+    width: 30px;
+}
 .main p{
     color: black;
     font-family: var(--fonte-padrao);
@@ -250,7 +314,7 @@ li{
     font-size: larger;
 }
 
-form{
+.main form{
     display: flex !important;
     align-items: center;
     flex-direction: column;
@@ -271,7 +335,7 @@ form{
 .input-login::placeholder{
     color:black;
 }
-.checkbox{
+.checkbox-main{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -280,7 +344,7 @@ form{
     margin-top: 10px;
     gap: 10px;
 }
-.checkbox p{
+.checkbox-main p{
     font-size: 11.5px !important;
     margin-top: 10px;
 }
@@ -288,7 +352,7 @@ form{
 #btn-login{
     width: 320px;
     height: 50px;
-    background-color:var(--amarelo-escuro) ;
+    background-color:var(--cor2) ;
     color: #ffffff;
     border: none;
     border-radius: 30px;
@@ -302,15 +366,115 @@ form{
     color: var(--lilas) ;
     text-decoration: none;
 }
+/* area do footer */
+:root{
+    /* --------- CORES --------- */
+     --color-neutral: black;
+     --color-font-newsletter: #8888;
+     --color-neutral-10: #ffff;
+     --color-top-footer: #f6f6f6;
+     --color-neutral-20: #d9d9d9;
+     --color-body: #F9FBFF;
+ }
+ .top-footer{
+     align-items: center;
+     background: var(--cor2);
+     display: flex;
+     /* flex-direction: row; */
+     /* gap: 10rem; */
+     justify-content: center;
+     padding: 0.5rem;
+ }
+ 
+ .font-newsletter{
+     color: white;
+     font-size: 15px;
+     margin-right:150px;
+ }
+ 
+ .newsLetter{
+     background: var(--color-neutral-20);
+     border-radius: 6px;
+     border: none;
+     color: var(--color-neutral);
+     padding: 0.4rem;
+ }
+ .btn-form{
+     background-color: var(--color-neutral);
+     border: none;
+     border-radius: 6px;
+     color: white;
+     cursor: pointer;
+     display: inline-block;
+     font-size: 15px;
+     padding: 0.4rem;
+     text-decoration: none;
+ }
 
-.direitos-reservados p{
-    font-size: 12px;
-}
-.sobre-nos{
-    margin-bottom: 20px;
-
-}
-.sobre-nos p{
-    font-size: 14px;
-
+ /* ------------- INFORMAÇÕES DO SITE -------------  */
+ ul{
+     list-style: none;
+ }
+ 
+ .info-footer{
+     background: var(--cor1);
+      display: flex;
+     /* flex-direction: row; */
+     justify-content: space-around;
+     gap: 5rem;
+     padding: 2rem 0 3rem;
+     width: 100%; 
+     color: #ccc;
+ }
+ 
+ .info-menu{
+     color: #aca8a8;
+     margin-top: 5%;
+ }
+ .menu-itens-superior{
+    display: flex;
+    gap: 200px;
+ }
+ 
+ .info-menu:hover{
+     cursor: pointer;
+     text-decoration: underline;
+ }
+ 
+ .info-menu li{
+     font-size: 1.5rem;
+     margin-top: 5%;   
+ }
+ 
+ .payment-methods{
+     display: flex;
+     flex-wrap:wrap;
+     gap: 1rem;
+     margin-top: 4%;
+ }
+ .info-cards:hover{
+     cursor: pointer;
+ }
+ 
+ 
+ #cards{
+     width:4rem;
+ }
+ 
+ #pix{
+     width: 2rem;
+     height: 2rem;
+ }
+ #boleto{
+     width: 2rem;
+     height: 2rem;
+ }
+ #mastercard{
+     width: 2.3rem;
+     margin-top: 4%;
+ }
+ .footer-bottom{ 
+     background: var(--cor2);
+     text-align: center;
+     padding: 0.5rem;
 }

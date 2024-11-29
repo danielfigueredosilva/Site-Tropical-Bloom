@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="author" content="Daniel, Caio e Túlio">
+    <meta name="discripion" content="Web commerce de vendas de flores ">
+    <link rel="shortcut icon" href="../Icones/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../estilos/cadastrar.css">
-    <link rel="stylesheet" href="../../style.css">
-    
-    <title>Cadastrar-se</title>
+    <title>Tropical Bloom</title>
+    <link href="https://chatcompose.azureedge.net/static/all/global/export/css/main.5b1bd1fd.css" rel="stylesheet">
+    <script async type="text/javascript"
+        src="https://chatcompose.azureedge.net/static/all/global/export/js/main.a7059cb5.js?user=br_caiopatri-BloomBot&lang=PT"
+        user="br_caiopatri-BloomBot" lang="PT"></script>
 </head>
 <body>
     <header> 
@@ -34,16 +39,24 @@
                     <div class="btn-carrinho">
                         <a href="#"><img src="../Icones/carrinho-de-compras.svg" alt="Carrinho" height="25" width="25" class="img-carrinho"></a>
                     </div>
+                    <div class="dark-mode">
+                        <input type="checkbox" class="checkbox" id="chk">
+                        <label class="label" for="chk">
+                            <i class="fa-regular fa-moon change-theme" id="darkmode"></i>
+                            <i class="fa-regular fa-sun change-theme" id="darkmode"></i>
+                            <div class="ball"></div>
+                        </label>
+                    </div>
                 </div>
             </div>
-            <hr>
+            <hr class="linha-header">
             <nav class="nav-inferior">
                 <div class="nav-list">            
                     <ul class="navigator">
                         <li class="nav-item"><a href="#" class="nav-link">Categorias de Flores</a></li>
-                        <li class="nav-item"><a href="CategoriasGerais/floresDeCorte.html" class="nav-link">Flores de corte<a><li>
-                        <li class="nav-item"><a href="CategoriasGerais/buquesArranjos.html" class="nav-link">Buquês e Arranjos</a></li>
-                        <li class="nav-item"><a href="CategoriasGerais/ornamentais.html" class="nav-link">Plantas Ornamentais</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Flores de corte<a><li>
+                        <li class="nav-item"><a href="#" class="nav-link">Buquês e Arranjos</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Plantas Ornamentais</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Promoções</a></li>
                     </ul>
                 </div>
@@ -55,14 +68,14 @@
     <div class="main">
         <p>Crie sua conta</p>
         <ul>
-            <li><button id="btn-facebook"></i>Continuar com Google</button></li>
-            <li><button id="btn-google"><div class="texto-formulario">Continuar com Fecebook</div></button></li>
+            <li><button id="btn-facebook"><div class="logo-google"><img src="../Icones/logo-google.svg" alt="logo-google"></div>Continuar com Google</button></li>
+            <li><button id="btn-google"><div class="logo-facebook"><img src="../Icones/logo-facebook.svg" alt="logo-facebook"></div>Continuar com Fecebook</button></li>
         </ul>
         <p >Se preferir use seu e-mail</p>
         <form>
            <input class="input-login" type="email" placeholder="Seu e-mail">
            <input class="input-login" type="password" placeholder="Senha">
-           <div class="checkbox">
+           <div class="checkbox-main">
                <input type="checkbox">
                <p >Quero receber atualizações do meu pedido por e-mail</p>
            </div>
@@ -110,22 +123,22 @@
             <span class="title-footer">Formas de Pagamento</span>
             <ul class="payment-methods">
                 <li class="info-cards">
-                    <img src="../../Imagens/cartao/visa.png" alt="visa" id="cards">
+                    <img src="../Imagens/cartao/visa.png" alt="visa" id="cards">
                 </li>
                 <li class="info-cards">
-                    <img src="../../Imagens/cartao/mastercard.png" alt="mastercard" id="mastercard">
+                    <img src="../Imagens/cartao/mastercard.png" alt="mastercard" id="mastercard">
                 </li>
                 <li class="info-cards">
-                    <img src="../../Imagens/cartao/elo.png" alt="elo" id="cards">
+                    <img src="../Imagens/cartao/elo.png" alt="elo" id="cards">
                 </li>
                 <li class="info-cards">
-                    <img src="../../Imagens/cartao/hipercard.png" alt="hiper" id="cards">
+                    <img src="../Imagens/cartao/hipercard.png" alt="hiper" id="cards">
                 </li>
                 <li class="info-cards">
-                    <img src="../../Imagens/cartao/pix.png" alt="pix" id="pix">
+                    <img src="../Imagens/cartao/pix.png" alt="pix" id="pix">
                 </li>
                 <li class="info-cards">
-                    <img src="../../Imagens/cartao/boleto.png" alt="boleto" id="boleto">
+                    <img src="../Imagens/cartao/boleto.png" alt="boleto" id="boleto">
                 </li>
             </ul>
         </div>
@@ -152,5 +165,6 @@
             Blom</span>
     </div>
 </footer>
+    <script src="../app.js" defer> </script>
 </body>
 </html>
