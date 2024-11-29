@@ -669,7 +669,7 @@ aside > button{
  }
  .top-footer{
      align-items: center;
-     background: #747474;
+     background: #F26684;
      display: flex;
      /* flex-direction: row; */
      /* gap: 10rem; */
@@ -708,7 +708,7 @@ aside > button{
  }
  
  .info-footer{
-     background: #442f72;
+     background: #D64260;
       display: flex;
      /* flex-direction: row; */
      justify-content: space-around;
@@ -766,7 +766,7 @@ aside > button{
  }
  .footer-bottom{
      
-     background: #747474;
+     background: #F26684;
      text-align: center;
      padding: 0.5rem;
 }
