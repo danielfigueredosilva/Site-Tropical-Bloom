@@ -381,9 +381,14 @@ header{
     .menu-itens-superior{
         gap: 50px !important;
     }
-    .btn-carrinho{
-        /* width: 30px !important; */
-    }  
+    .box-container{
+        flex-direction: column;
+        width: 310px;
+        gap: 50px !important;
+    } 
+    .box{
+        margin-left: 80px !important;
+    }
 }
 /*Ativação do menu hamburguer*/
 .navigator.active {
