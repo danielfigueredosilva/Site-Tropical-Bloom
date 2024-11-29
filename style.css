@@ -19,11 +19,11 @@
 */
 /*Variaveis para cores e fonte*/
 :root{
-    --amarelo-claro:#f2d16d;
-    --amarelo-escuro:#f2bb13;
-    --roxo:#442f72;
-    --lilas:#a56da6;
-    --rosa-claro:#f2c2dc;
+    --cor1:#d64260;
+    --cor2:#f26684;
+    --cor3:#ffc7c9;
+    --cor4:#f28087;
+    --cor5:#f26684;
 
     --fonte-padrao: "Open Sans", sans-serif;
     --fonte-titulos: "Merriweather", serif;
@@ -40,7 +40,7 @@ header{
     align-items: center;
     justify-content: center;
     /* padding:  0 40px; */
-    background-color: var(--roxo);
+    background-color: var(--cor1);
     box-shadow: 0px 0px 5px black;
     width: 100%;
     height: 150px;
@@ -66,7 +66,7 @@ header{
 .linha-header{
     position: relative; 
     right: 150px;
-    border-color:#cccccc66    ;
+    border-color:white;    ;
     width: 830px;
 }
 .dark-mode-mobile,.linha-menu-mobile, .logar-entrar,.info-uteis{
@@ -136,7 +136,7 @@ header{
 /*Botão de entrar*/
 .btn-entrar button{
     border: none;
-    background-color: #f2bb13;
+    background-color: var(--cor2);
     padding:6px 15px;
     border-radius:6px; 
     cursor: pointer;  
@@ -144,7 +144,7 @@ header{
 /*Botão de cadatrar-se*/
 .btn-cadastrar-se button{
     border: none;
-    background-color: #f2bb13;
+    background-color: var(--cor2);
     padding: 6px 15px;
     border-radius:6px;
     cursor: pointer;
@@ -170,8 +170,8 @@ header{
 .busca{
     display: flex;
     /* align-items: center; */
-    border: 1px solid #ccc ;
-    background-color: #ccc;
+    border: 1px solid white ;
+    background-color: white;
     width: 400px;
     height: 25px;
     border-radius: 20px;
@@ -500,7 +500,8 @@ section.slider{
 }
 /*Estilização da main*/
 main{
-    background-color:  rgb(245, 243, 239);
+    /* background-color:  rgba(213, 194, 209, 0.927); */
+    background-color:  #F6F4F0;
     min-width: 200px;
     max-width: 1350px;
     margin: auto; 
@@ -693,7 +694,7 @@ main{
  }
  .top-footer{
      align-items: center;
-     background: #747474;
+     background: var(--cor2);
      display: flex;
      /* flex-direction: row; */
      /* gap: 10rem; */
@@ -732,7 +733,7 @@ main{
  }
  
  .info-footer{
-     background: #442f72;
+     background: var(--cor1);
       display: flex;
      /* flex-direction: row; */
      justify-content: space-around;
@@ -790,7 +791,7 @@ main{
  }
  .footer-bottom{
      
-     background: #747474;
+     background: var(--cor2);
      text-align: center;
      padding: 0.5rem;
 }
