@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../estilos/produto.css">
+    <script src="../app.js" defer></script>
+    <link href="https://chatcompose.azureedge.net/static/all/global/export/css/main.5b1bd1fd.css" rel="stylesheet">
+    <script async type="text/javascript"
+        src="https://chatcompose.azureedge.net/static/all/global/export/js/main.a7059cb5.js?user=br_caiopatri-BloomBot&lang=PT"
+        user="br_caiopatri-BloomBot" lang="PT"></script>
 </head>
 
 <body>
@@ -25,6 +30,7 @@
                     <input type="text" id="txt-busca" placeholder="Pesquisar">
                 </div>
                 <div class="btn-menu">
+                    
                     <div class="btn-cadastrar-se">
                         <a href="cadastrar.html"><button class="btn-link">Cadastrar-se</button></a>
                     </div>
@@ -35,18 +41,25 @@
                         <a href="#"><img src="../Icones/carrinho-de-compras.svg" alt="Carrinho" height="25" width="25"
                                 class="img-carrinho"></a>
                     </div>
+                    <div class="dark-mode-mobile">
+                        <input type="checkbox" class="checkbox" class="nav-item" id="chk">
+                        <label class="label" for="chk">
+                            <i class="fa-regular fa-moon change-theme" id="darkmode"></i>
+                            <i class="fa-regular fa-sun change-theme" id="darkmode"></i>
+                            <div class="ball"></div>
+                        </label>
+                    </div>
                 </div>
             </div>
             <hr>
             <nav class="nav-inferior">
                 <div class="nav-list">
                     <ul class="navigator">
+                        <li class="nav-item"><a href="#" class="nav-link">Promoções</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Categorias de Flores</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Flores de corte<a>
-                        <li>
+                        <li class="nav-item"><a href="#" class="nav-link">Flores de corte<a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Buquês e Arranjos</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Plantas Ornamentais</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Promoções</a></li>
                     </ul>
                 </div>
             </nav>
@@ -56,8 +69,8 @@
         <article>
             <section id="Imagem-produto">
                 <img class="img-principal"
-                    src="../Imagens/RASCUNHO(imagens)/(Rascunho)Buques e arranjos/ArranjoOrquideas.png" width="67%"
-                    height="90%">
+                    src="../Imagens/HD flores/arranjoorqui.jpg" width="100%"
+                    height="100%">
             </section>
 
 
@@ -118,10 +131,10 @@
         <h1 id="promocao-titulo">Outros Produtos</h1>
         <section id="area-promocoes">
 
+            
             <article class="produto-promocao">
                 <div class="imagem-promocao">
-                    <img class="img-promocao" src="../Imagens/Cortes/CorteProtea.bak.png" width="100%" height="100%"
-                        alt="">
+                    <a href="../paginas/BuqueColorido.html"><img class="img-promocao" src="../Imagens/HD flores/BuqueColorido.jpg  " width="100%" height="100%" alt=""></a>
                 </div>
                 <div class="area-info-produtos">
                     <div class="text-promocao">
@@ -131,47 +144,21 @@
                         <p>🕛Hoje</p>
                     </div>
                     <div class="Titulo-Promocoes">
-                        <p>Flor de Corte Protea</p>
+                        <p>Buque de Flores colorido</p>
                     </div>
                     <div class="preco-promocao">
-                        <small style="text-decoration: line-through;">R$:32 </small><small> R$:19.99</small>
+                        <small style="text-decoration: line-through;">R$:130 </small><small> R$:100.00</small>
                     </div>
                     <div class="Promocao-comprar">
-                        <button>➕</button>
+                        <button> <a href="../paginas/BuqueColorido.html">➕</a></button>
                         <button>🛒</button>
                     </div>
                 </div>
             </article>
             <article class="produto-promocao">
-
                 <div class="imagem-promocao">
-                    <img class="img-promocao" src="../imagens/Anturios/BuqueAnturio.png" width="80%" height="90%"
-                        alt="">
-                </div>
-                <div class="area-info-produtos">
-                    <div class="text-promocao">
-                        <p>Floral Bloom</p>
-                    </div>
-                    <div class="data-promocao">
-                        <p>🕛Hoje</p>
-                    </div>
-                    <div class="Titulo-Promocoes">
-                        <p>Buque de Anturios vermelhos</p>
-                    </div>
-                    <div class="preco-promocao">
-                        <small style="text-decoration: line-through;">R$:100</small><small> R$:73.56</small>
-                    </div>
-                    <div class="Promocao-comprar">
-                        <button>➕</button>
-                        <button>🛒</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="produto-promocao">
-                <div class="imagem-promocao">
-                    <img class="img-promocao" src="../imagens/Cortes/CorteOrquidea.png" width="100%" height="100%"
-                        alt="">
+                    <a href="../paginas/CorteOrquidea.html"><img class="img-promocao"
+                            src="../Imagens/HD flores/orquidea.jpg" width="100%" height="100%" alt=""></a>
                 </div>
                 <div class="area-info-produtos">
                     <div class="text-promocao">
@@ -184,19 +171,43 @@
                         <p>Flor de Corte Orquidea</p>
                     </div>
                     <div class="preco-promocao">
-                        <small style="text-decoration: line-through;">R$:30 </small><small> R$:15.00</small>
+                        <small style="text-decoration: line-through;">R$:30.00 </small><small> R$:15.00</small>
                     </div>
                     <div class="Promocao-comprar">
-                        <button>➕</button>
+                        <button> <a href="../paginas/CorteOrquidea.html">➕</a></button>
+                        <button>🛒</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="produto-promocao">
+                <div class="imagem-promocao">
+                    <a href="../paginas/BuqueAnturios.html"><img class="img-promocao" src="../Imagens/HD flores/buqueantu.jpeg" width="100%" height="100%" alt=""></a>
+                </div>
+                <div class="area-info-produtos">
+                    <div class="text-promocao">
+                        <p>Floral Bloom</p>
+                    </div>
+                    <div class="data-promocao">
+                        <p>🕛Hoje</p>
+                    </div>
+                    <div class="Titulo-Promocoes">
+                        <p>Buque de Anturios vermelhos</p>
+                    </div>
+                    <div class="preco-promocao">
+                        <small style="text-decoration: line-through;">R$:100 </small><small> R$:73.56</small>
+                    </div>
+                    <div class="Promocao-comprar">
+                        <a href="../paginas/BuqueAnturios.html"><button>➕</button></a>
                         <button>🛒</button>
                     </div>
                 </div>
             </article>
             <article class="produto-promocao">
                 <div class="imagem-promocao">
-                    <img class="img-promocao"
-                        src="/Site-Tropical-Bloom-main/Imagens/RASCUNHO(imagens)/(Rascunho)cortes e ornamentais/cortePlumeriaa.jpg"
-                        width="100%" height="100%" alt="">
+                   <a href=""> <img class="img-promocao"
+                        src="../Imagens/HD flores/Plumeria.jpg"
+                        width="100%" height="100%" alt=""></a>
                 </div>
                 <div class="area-info-produtos">
                     <div class="text-promocao">
@@ -212,24 +223,90 @@
                         <small style="text-decoration: line-through;">R$:40 </small><small> R$:23.90</small>
                     </div>
                     <div class="Promocao-comprar">
-                        <button>➕</button>
-                        <button>🛒</button>
+                       <a href=""><button>➕</button></a>
+                       <button>🛒</button>
                     </div>
                 </div>
             </article>
         </section>
     </main>
-    <footer>
-        <div style="margin-bottom: 20px;">
-            <h2 style="font-family: 'Arial', sans-serif; margin: 0;">Tropical Bloom</h2>
-            <p style="font-size: 14px;">Transformando seu espaço com a beleza da natureza</p>
+    <footer class="footer-container">
+
+        <!-- ------------- NEWSLETTER ------------- -->
+        <div class="top-footer">
+            <span class="font-newsletter">Receba as notícias sobre as promoções</span>
+
+            <form action="">
+                <input type="email" id="email" name="email" placeholder="Endereço de e-mail" class="newsLetter">
+                <button type="submit" class="btn-form">Enviar</button>
+            </form>
         </div>
-        <div class="sobre-nos">
-            <h4>Sobre nós</h4>
-            <p>Conheça nossa missão e visão de trazer mais verde para sua vida.</p>
+
+        <!-- ------------- INFORMAÇÕES DO SITE ------------- -->
+        <div class="info-footer">
+            <div class="menu-itens-superior">
+                <div class="menu-itens">
+                    <ul class="contacts">
+                        <span class="title-footer">Nosso Contato</span>
+                        <li class="info-menu">Fale Conosco</li>
+                        <li class="info-menu">Representantes</li>
+                        <li class="info-menu">Nossa Loja</li>
+                    </ul>
+                </div>
+                <div class="menu-itens">
+                    <ul>
+                        <span class="title-footer">Dúvidas</span>
+                        <li class="info-menu">Central de Atendimento</li>
+                        <li class="info-menu">Política de Troca e Devolução</li>
+                        <li class="info-menu">Envios e entregas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="menu-cards">
+                <span class="title-footer">Formas de Pagamento</span>
+                <ul class="payment-methods">
+                    <li class="info-cards">
+                        <img src="../Imagens/cartao/visa.png" alt="visa" id="cards">
+                    </li>
+                    <li class="info-cards">
+                        <img src="../Imagens/cartao/mastercard.png" alt="mastercard" id="mastercard">
+                    </li>
+                    <li class="info-cards">
+                        <img src="../Imagens/cartao/elo.png" alt="elo" id="cards">
+                    </li>
+                    <li class="info-cards">
+                        <img src="../Imagens/cartao/hipercard.png" alt="hiper" id="cards">
+                    </li>
+                    <li class="info-cards">
+                        <img src="../Imagens/cartao/pix.png" alt="pix" id="pix">
+                    </li>
+                    <li class="info-cards">
+                        <img src="../Imagens/cartao/boleto.png" alt="boleto" id="boleto">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="menu-itens">
+                <ul class="social-media">
+                    <span class="title-footer">Redes Sociais</span>
+                    <li class="info-menu">
+                        <i class="fa-brands fa-instagram"></i>
+                        @FloralBloom
+                    </li>
+                    <li class="info-menu">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        FloralBloomOficial
+                    </li>
+                </ul>
+            </div>
+
         </div>
-        <div class="direitos-reservados">
-            <p>Todos os direitos reservados &copy; 2024 Tropical Bloom</p>
+
+        <!-- ------------- INFORMAÇÕES DE LOCALIZAÇÃO ------------- -->
+        <div class="footer-bottom">
+            <span class="font-newsletter">Recife, Pernambuco | CNPJ: | &#169; 2024 Todos os direitos reservados Floral
+                Blom</span>
         </div>
     </footer>
 
